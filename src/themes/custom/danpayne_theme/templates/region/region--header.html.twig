@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+{% if content %}
+  <header class="header-website">
+    <div class="header-banner">
+      <div class="header-banner-overlay"></div>
+        <div class="header-banner-container wrapper-inner">
+        <!-- <img src="dan.jpg" class="header-logo" /> -->
+        <div class="header-title">
+        <p>
+          <span class="website-title">{{ site_name }}</span><br>
+          {{ slogan }}
+        </p>
+      </div>
+    </div>
+  </div>
+  {{ content }}
+  </header>
+{% endif %}
