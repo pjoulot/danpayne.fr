@@ -2,6 +2,8 @@ name: Dan Payne Theme
 type: theme
 description: Theme of danpayne.fr website
 core: 8.x
+'interface translation project': danpayne_theme
+'interface translation server pattern': themes/custom/danpayne_theme/translations/%language.po
 libraries:
   - danpayne_theme/global-styling
 regions:

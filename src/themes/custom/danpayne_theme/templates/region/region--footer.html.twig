@@ -13,7 +13,8 @@
  */
 #}
 {% if content %}
-  <div{{ attributes }}>
+  <div{{ attributes.addClass("wrapper-inner") }}>
     {{ content }}
+    <p class="copyright-website">{{ "Copyright"|t }} © {{ current_year }} - {{ site_name }}<br> {{ "This is not an official website, it has been created by fans for fans of the actor Dan Payne."|t }}</p>
   </div>
 {% endif %}
