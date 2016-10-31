@@ -8,6 +8,6 @@ libraries:
   - danpayne_theme/global-styling
 regions:
   header: Header
-  content: Content  # the content region is required
+  content: Content
   sidebar_first: 'Sidebar first'
-  footer: Footer
+  footer: Footersrc/themes/custom/danpayne_theme/translations/
