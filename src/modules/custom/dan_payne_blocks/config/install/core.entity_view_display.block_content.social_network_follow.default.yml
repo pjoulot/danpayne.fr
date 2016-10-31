@@ -1,0 +1,26 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.social_network_follow
+    - field.field.block_content.social_network_follow.field_social_network_follow_link
+  module:
+    - link
+id: block_content.social_network_follow.default
+targetEntityType: block_content
+bundle: social_network_follow
+mode: default
+content:
+  field_social_network_follow_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+hidden:
+  langcode: true

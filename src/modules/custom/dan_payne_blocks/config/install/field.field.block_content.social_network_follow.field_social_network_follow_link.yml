@@ -1,0 +1,22 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.social_network_follow
+    - field.storage.block_content.field_social_network_follow_link
+  module:
+    - link
+id: block_content.social_network_follow.field_social_network_follow_link
+field_name: field_social_network_follow_link
+entity_type: block_content
+bundle: social_network_follow
+label: 'Social Network Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

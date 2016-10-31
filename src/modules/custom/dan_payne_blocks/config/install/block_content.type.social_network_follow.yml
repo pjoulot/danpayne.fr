@@ -1,0 +1,7 @@
+langcode: fr
+status: true
+dependencies: {  }
+id: social_network_follow
+label: 'Social Network Follow'
+revision: 0
+description: 'The "Social Network Follow" block is a block which list the different social networks where users can go.'

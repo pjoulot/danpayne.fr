@@ -1,0 +1,10 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.social_network_follow
+id: block_content.social_network_follow
+target_entity_type_id: block_content
+target_bundle: social_network_follow
+default_langcode: site_default
+language_alterable: false
