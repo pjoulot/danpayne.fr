@@ -3,3 +3,14 @@ global-styling:
   css:
     theme:
       css/main.css: {}
+  js:
+    js/main.js: {}
+    
+owl-carousel:
+  version: 1.x
+  css:
+    theme:
+      libraries/owl-carousel/owl.carousel.css: {}
+      libraries/owl-carousel/owl.theme.css: {}
+  js:
+    libraries/owl-carousel/owl-carousel.js: {}

@@ -6,6 +6,7 @@ core: 8.x
 'interface translation server pattern': themes/custom/danpayne_theme/translations/%language.po
 libraries:
   - danpayne_theme/global-styling
+  - danpayne_theme/owl-carousel
 regions:
   header: Header
   content: Content

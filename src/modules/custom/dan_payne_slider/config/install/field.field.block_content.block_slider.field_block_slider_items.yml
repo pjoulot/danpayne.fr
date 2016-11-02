@@ -1,0 +1,29 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.block_slider
+    - field.storage.block_content.field_block_slider_items
+    - paragraphs.paragraphs_type.slider
+  module:
+    - entity_reference_revisions
+id: block_content.block_slider.field_block_slider_items
+field_name: field_block_slider_items
+entity_type: block_content
+bundle: block_slider
+label: Items
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      slider: slider
+    target_bundles_drag_drop:
+      slider:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

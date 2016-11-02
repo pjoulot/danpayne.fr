@@ -1,0 +1,36 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.block_slider
+    - field.field.block_content.block_slider.field_block_slider_items
+  module:
+    - paragraphs
+id: block_content.block_slider.default
+targetEntityType: block_content
+bundle: block_slider
+mode: default
+content:
+  field_block_slider_items:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
