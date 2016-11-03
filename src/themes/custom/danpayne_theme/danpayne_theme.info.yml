@@ -9,6 +9,7 @@ libraries:
   - danpayne_theme/owl-carousel
 regions:
   header: Header
+  top_content: Top Content
   content: Content
   sidebar_first: 'Sidebar first'
   footer: Footer

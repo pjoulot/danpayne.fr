@@ -13,7 +13,7 @@
  */
 #}
 {% if content %}
-  <aside {{ attributes.addClass("template-right-column--column", "layout-sidebar-first") }} role="complementary">
+  <div{{ attributes.addClass("template-right-column--main-content") }}>
     {{ content }}
   </div>
 {% endif %}

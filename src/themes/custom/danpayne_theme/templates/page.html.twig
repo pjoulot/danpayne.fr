@@ -61,16 +61,14 @@
   <main role="main" class="website-content">
     <div class="wrapper-inner">
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-      <div class="layout-content">
+      {{ page.top_content }}
+      <div class="layout-content template-right-column">
         {{ page.content }}
-      </div>{# /.layout-content #}
 
-      {% if page.sidebar_first %}
-        <aside class="layout-sidebar-first" role="complementary">
+        {% if page.sidebar_first %}
           {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
+        {% endif %}
+      </div>
     </div>
   </main>
 
