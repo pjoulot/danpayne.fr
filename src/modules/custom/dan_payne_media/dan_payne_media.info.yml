@@ -5,6 +5,7 @@ dependencies:
   - field
   - file
   - image
+  - language
   - media_entity
   - user
   - video_embed_field

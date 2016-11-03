@@ -2,21 +2,23 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.block_slider
     - field.field.media.image.field_image_media_bundle_image
+    - image.style.autox450
     - media_entity.bundle.image
   module:
     - image
-id: media.image.default
+id: media.image.block_slider
 targetEntityType: media
 bundle: image
-mode: default
+mode: block_slider
 content:
   field_image_media_bundle_image:
     type: image
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: autox450
       image_link: ''
     third_party_settings: {  }
 hidden:

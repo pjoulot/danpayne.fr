@@ -2,25 +2,17 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.entity_browser
     - field.field.media.image.field_image_media_bundle_image
     - media_entity.bundle.image
-  module:
-    - image
-id: media.image.default
+id: media.image.entity_browser
 targetEntityType: media
 bundle: image
-mode: default
-content:
-  field_image_media_bundle_image:
-    type: image
-    weight: 0
-    label: hidden
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
+mode: entity_browser
+content: {  }
 hidden:
   created: true
+  field_image_media_bundle_image: true
   langcode: true
   name: true
   thumbnail: true

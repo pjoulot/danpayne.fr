@@ -20,8 +20,8 @@ content:
   field_image_media_bundle_image:
     weight: 11
     settings:
-      progress_indicator: throbber
       preview_image_style: thumbnail
+      progress_indicator: throbber
     third_party_settings: {  }
     type: image_image
   langcode:

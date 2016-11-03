@@ -1,0 +1,14 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: autox450
+label: autox450
+effects:
+  f87e3d48-e350-420d-9707-f60de27e4990:
+    uuid: f87e3d48-e350-420d-9707-f60de27e4990
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 450
+      upscale: true
