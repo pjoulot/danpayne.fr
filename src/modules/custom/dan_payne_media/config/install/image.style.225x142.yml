@@ -1,0 +1,13 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 225x142
+label: 225x142
+effects:
+  697c43be-a45b-432d-a7f1-34a3d6572aff:
+    uuid: 697c43be-a45b-432d-a7f1-34a3d6572aff
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 225
+      height: 142

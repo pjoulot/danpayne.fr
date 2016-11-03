@@ -1,0 +1,14 @@
+name: 'Dan Payne Article'
+type: module
+core: 8.x
+dependencies:
+  - comment
+  - dan_payne_media
+  - entity_browser
+  - field
+  - media_entity
+  - node
+  - path
+  - rdf
+  - text
+  - user
