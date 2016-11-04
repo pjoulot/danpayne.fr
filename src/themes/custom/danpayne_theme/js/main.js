@@ -15,7 +15,7 @@
 jQuery(document).ready(function() {
     
     jQuery(".owl-carousel").owlCarousel({
-	    autoPlay: false,
+	    autoPlay: true,
 	    slideSpeed : 300,
       singleItem:true
 	  });

@@ -72,9 +72,14 @@
 #}
 
 {# @todo Move the div to a specific template for the views frontpage #}
+{% set createdDate = node.getCreatedTime|date('d/m/Y') %}
 <div class="view-list-item default-container">
   <article{{ attributes.addClass("news-teaser") }}>
-    <a href="{{ url }}" rel="bookmark">{{ content.field_news_media }}</a>
+    <a href="{{ url }}" rel="bookmark" class="img-reflect">
+      <figure>
+        {{ content.field_news_media }}
+      </figure>
+    </a>
     <div class="news-teaser-content">
       {{ title_prefix }}
       {% if not page %}
@@ -86,10 +91,8 @@
 
       {% if display_submitted %}
         <footer>
-          {{ author_picture }}
           <div{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-            {{ metadata }}
+            {{ createdDate }}
           </div>
         </footer>
       {% endif %}

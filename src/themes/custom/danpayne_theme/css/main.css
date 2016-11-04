@@ -7,11 +7,11 @@ body {
 }
 
 a, a:visited, a:hover {
-	color: #339DC3;
+  color: #339DC3;
 }
 
 a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 h3 {
@@ -218,8 +218,15 @@ h3 {
 }
 
 .news-teaser-content {
-	padding-left: 20px;
-	padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.news-teaser-content footer {
+  color: #889BA8;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .template-right-column {
@@ -333,4 +340,43 @@ h3 {
 .copyright-website {
 	text-align: center;
 	font-size: 10px;
+}
+
+/* Shine */
+
+.img-reflect figure {
+  position: relative;
+  width: 225px;
+  height: 142px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.img-reflect figure::before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+.img-reflect figure:hover::before {
+  -webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
 }
