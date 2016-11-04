@@ -2,16 +2,16 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.media.article_teaser
+    - core.entity_view_mode.media.news_teaser
     - field.field.media.image.field_image_media_bundle_image
     - image.style.225x142
     - media_entity.bundle.image
   module:
     - image
-id: media.image.article_teaser
+id: media.image.news_teaser
 targetEntityType: media
 bundle: image
-mode: article_teaser
+mode: news_teaser
 content:
   field_image_media_bundle_image:
     type: image

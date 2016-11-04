@@ -2,24 +2,24 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_article_media
-    - media_entity.bundle.image
-    - node.type.article
-id: node.article.field_article_media
-field_name: field_article_media
+    - field.storage.node.field_news_tags
+    - node.type.news
+    - taxonomy.vocabulary.tags
+id: node.news.field_news_tags
+field_name: field_news_tags
 entity_type: node
-bundle: article
-label: 'Media Image'
+bundle: news
+label: Tags
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
+  handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      image: image
+      tags: tags
     sort:
       field: _none
     auto_create: false

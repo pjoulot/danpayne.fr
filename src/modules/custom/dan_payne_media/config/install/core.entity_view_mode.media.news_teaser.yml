@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - media_entity
-id: media.article_teaser
-label: 'Article Teaser'
+id: media.news_teaser
+label: 'News Teaser'
 targetEntityType: media
 cache: true
