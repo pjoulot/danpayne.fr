@@ -74,7 +74,7 @@
 {# @todo Move the div to a specific template for the views frontpage #}
 <div class="view-list-item default-container">
   <article{{ attributes.addClass("news-teaser") }}>
-
+    <a href="{{ url }}" rel="bookmark">{{ content.field_news_media }}</a>
     <div class="news-teaser-content">
       {{ title_prefix }}
       {% if not page %}
@@ -95,7 +95,7 @@
       {% endif %}
 
       <div{{ content_attributes }}>
-        {{ content }}
+        {{ content|without('field_news_media') }}
       </div>
     </div>
 
