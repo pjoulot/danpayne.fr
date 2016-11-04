@@ -380,3 +380,29 @@ h3 {
     left: 125%;
   }
 }
+
+.admin-primary-tabs {
+  list-style-type: none;
+  display: flex;
+}
+
+.admin-primary-tabs a {
+  display: block;
+  padding: 15px;
+  border-radius: 5px;
+  border: solid 1px #E1E8ED;
+  background-color: white;
+  transition: background-color 0.5s, color 0.5s;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.admin-primary-tabs a:hover {
+  background-color: #339DC3;
+  color: white;
+}
+
+.admin-primary-tabs .is-active {
+  background-color: #339DC3;
+  color: white;
+}
