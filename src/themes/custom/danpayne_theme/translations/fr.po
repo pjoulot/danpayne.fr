@@ -14,3 +14,9 @@ msgstr ""
 
 msgid "This is not an official website, it has been created by fans for fans of the actor Dan Payne."
 msgstr "Ce site n'est en aucun cas un site officiel, il a été créé par des fans pour les fans de l'acteur Dan Payne."
+
+msgid "Written on @createdDate"
+msgstr "Écrit par @createdDate"
+
+msgid "by @author_name "
+msgstr "par @author_name"
