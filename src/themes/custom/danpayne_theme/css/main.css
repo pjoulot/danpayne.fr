@@ -492,3 +492,26 @@ h3 {
   color: inherit;
   text-decoration: none;
 }
+
+.news-tag-list {
+  display: flex;
+}
+
+.news-tag-title {
+  font-weight: bold;
+  margin-left: 10px;
+  align-self: center;
+}
+
+.news-tag-list a, .news-tag-list a:visited {
+  background-color: #339DC3;
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.news-tag-list a:hover {
+  text-decoration: underline;
+}
