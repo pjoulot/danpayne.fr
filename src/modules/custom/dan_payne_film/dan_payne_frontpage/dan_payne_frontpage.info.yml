@@ -1,0 +1,7 @@
+name: 'Dan Payne Frontpage'
+type: module
+core: 8.x
+dependencies:
+  - node
+  - user
+  - views

@@ -1,0 +1,63 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.film.body
+    - field.field.node.film.field_film_character_list
+    - field.field.node.film.field_film_date
+    - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_name
+    - node.type.film
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.film.default
+targetEntityType: node
+bundle: film
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_film_character_list:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_film_date:
+    weight: 104
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_year
+    third_party_settings: {  }
+    type: datetime_default
+  field_film_image:
+    weight: 106
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_film_name:
+    weight: 102
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

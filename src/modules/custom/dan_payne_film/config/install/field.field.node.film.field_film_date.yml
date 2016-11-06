@@ -1,0 +1,20 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_film_date
+    - node.type.film
+  module:
+    - datetime
+id: node.film.field_film_date
+field_name: field_film_date
+entity_type: node
+bundle: film
+label: 'Film date'
+description: 'If you add a second date, it will be considered as the end date. For example, TV shows last several years.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

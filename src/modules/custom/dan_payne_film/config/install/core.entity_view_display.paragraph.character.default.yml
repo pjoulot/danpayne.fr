@@ -1,0 +1,39 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.character.field_paragraph_character_desc
+    - field.field.paragraph.character.field_paragraph_character_image
+    - field.field.paragraph.character.field_paragraph_character_name
+    - paragraphs.paragraphs_type.character
+  module:
+    - text
+id: paragraph.character.default
+targetEntityType: paragraph
+bundle: character
+mode: default
+content:
+  field_paragraph_character_desc:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_paragraph_character_image:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_paragraph_character_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,34 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.film.body
+    - field.field.node.film.field_film_character_list
+    - field.field.node.film.field_film_date
+    - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_name
+    - node.type.film
+  module:
+    - text
+    - user
+id: node.film.teaser
+targetEntityType: node
+bundle: film
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_film_character_list: true
+  field_film_date: true
+  field_film_image: true
+  field_film_name: true
+  langcode: true
