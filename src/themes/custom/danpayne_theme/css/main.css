@@ -236,6 +236,12 @@ h3 {
 
 .template-right-column--main-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-block {
+  flex-grow: 1;
   padding: 20px;
 }
 
@@ -418,4 +424,71 @@ h3 {
 
 .news-text-author {
   width: 250px;
+}
+
+.breadcrumb-nav ol {
+  list-style-type: none;
+  color: #292F33;
+  margin: 0;
+  display: flex;
+}
+
+.breadcrumb-nav ol li{
+  position:relative;
+  margin-right: 23px;
+}
+
+.breadcrumb-nav ol li a:first-child::before {
+  content: "";
+  background-image: url("../images/house-logo.png");
+  display: block;
+  height: 25px;
+  top: 10px;
+  width: 27px;
+  left: 0;
+  position: absolute;
+}
+
+.breadcrumb-nav ol li:first-child a {
+  padding-left: 40px;
+}
+
+.breadcrumb-nav ol li a {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 15px;
+  height: 18px;
+  display: block;
+}
+
+.breadcrumb-nav ol li::after {
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-top: 23px solid transparent; 
+  border-bottom: 23px solid transparent; /* 40px height (20+20) */
+  border-left: 23px solid #bfc5c9;
+  position:absolute;
+  right:-23px;
+  top: 0;
+  z-index:1;
+}
+
+.breadcrumb-nav ol li a::after {
+  content: "";
+  width: 0; 
+  height: 0; 
+  border-top: 22px solid transparent; 
+  border-bottom: 22px solid transparent; /* 40px height (20+20) */
+  border-left: 22px solid white;
+  position:absolute;
+  right:-22px;
+  top: 1px;
+  z-index:2;
+} 
+
+.breadcrumb-nav ol a, .breadcrumb-nav ol a:visited {
+  color: inherit;
+  text-decoration: none;
 }
