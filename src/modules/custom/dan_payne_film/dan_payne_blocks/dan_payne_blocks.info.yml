@@ -1,9 +1,0 @@
-name: 'Dan Payne Blocks'
-description: 'Module that define the blocks used on the website.'
-type: module
-core: 8.x
-dependencies:
-  - block_content
-  - field
-  - language
-  - link
