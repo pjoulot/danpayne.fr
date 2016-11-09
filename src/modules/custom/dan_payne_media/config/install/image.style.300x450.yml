@@ -1,0 +1,13 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 300x450
+label: 300x450
+effects:
+  300850b9-7d50-4646-b1b0-c63b1b928a79:
+    uuid: 300850b9-7d50-4646-b1b0-c63b1b928a79
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 450

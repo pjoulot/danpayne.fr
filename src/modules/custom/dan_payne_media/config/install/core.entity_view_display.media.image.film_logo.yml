@@ -1,0 +1,29 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.film_logo
+    - field.field.media.image.field_image_media_bundle_image
+    - image.style.250xauto
+    - media_entity.bundle.image
+  module:
+    - image
+id: media.image.film_logo
+targetEntityType: media
+bundle: image
+mode: film_logo
+content:
+  field_image_media_bundle_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 250xauto
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

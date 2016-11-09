@@ -1,0 +1,14 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 250xauto
+label: 250xauto
+effects:
+  fbbb7257-77ae-4708-bf48-861614b9f2e9:
+    uuid: fbbb7257-77ae-4708-bf48-861614b9f2e9
+    id: image_scale
+    weight: 1
+    data:
+      width: 250
+      height: null
+      upscale: true
