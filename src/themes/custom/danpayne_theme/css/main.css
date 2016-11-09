@@ -601,3 +601,7 @@ h3 {
 .character-item:hover .character-desc {
   opacity: 1;
 }
+
+.status-message {
+  padding: 20px;
+}
