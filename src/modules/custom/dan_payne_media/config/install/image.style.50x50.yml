@@ -1,0 +1,13 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 50x50
+label: 50x50
+effects:
+  9b9f68d2-5ed0-42d9-9aaf-f5f22e0c0492:
+    uuid: 9b9f68d2-5ed0-42d9-9aaf-f5f22e0c0492
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 50
