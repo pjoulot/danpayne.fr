@@ -315,6 +315,8 @@ h3 {
 	font-size: 12px;
 	margin-left: 10px;
 	color: #969696;
+	flex-grow: 1;
+	text-align: right;
 }
 
 .footer-website {

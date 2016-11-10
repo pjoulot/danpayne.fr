@@ -70,52 +70,10 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes }}>
-
+<li>
+  {{ content.field_film_image }}
   {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
+  <p>{{ label }}</p>
   {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-  
-  <div class="film-info">
-    <div class="film-info-image">
-      {{ content.field_film_image }}
-    </div>
-    <div class="film-info-name">
-      <b>{{ content.field_film_name }}</b>
-    </div>
-    <div class="film-info-table">
-      <table>
-        <tbody>
-          <tr>
-            <th>{{ "Date"|t }}:</th>
-            <td>
-              {{ content.field_film_date }}
-              {% if content.field_film_date_end|render%}
-                - {{ content.field_film_date_end }}
-              {% endif %}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div{{ content_attributes }}>
-    {{ content|without('field_film_image', 'field_film_name', 'field_film_date', 'field_film_date_end') }}
-  </div>
-
-</article>
+  <span class="list-projects-date">{{ content.field_film_date }}</span>
+</li>

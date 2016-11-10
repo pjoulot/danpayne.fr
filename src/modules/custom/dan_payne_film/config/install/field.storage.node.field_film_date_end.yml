@@ -4,8 +4,8 @@ dependencies:
   module:
     - datetime
     - node
-id: node.field_film_date
-field_name: field_film_date
+id: node.field_film_date_end
+field_name: field_film_date_end
 entity_type: node
 type: datetime
 settings:

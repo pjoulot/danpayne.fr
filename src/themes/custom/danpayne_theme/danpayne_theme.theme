@@ -21,4 +21,7 @@ function danpayne_theme_theme_suggestions_block_alter(array &$suggestions, array
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
+  if (isset($variables['elements']['content']['#type'])) {
+    array_splice($suggestions, 1, 0, 'block__views__name__' . $variables['elements']['content']['#name']);
+  }
 }
