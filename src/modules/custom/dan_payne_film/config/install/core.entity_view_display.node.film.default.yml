@@ -22,19 +22,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 4
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   field_film_character_list:
     type: entity_reference_revisions_entity_view
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
   field_film_date:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       timezone_override: ''
@@ -42,7 +42,7 @@ content:
     third_party_settings: {  }
     type: datetime_default
   field_film_date_end:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       timezone_override: ''
@@ -51,19 +51,22 @@ content:
     type: datetime_default
   field_film_image:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: film_logo
       link: false
     third_party_settings: {  }
   field_film_name:
-    weight: 1
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
-  links: true

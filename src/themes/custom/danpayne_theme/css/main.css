@@ -607,3 +607,20 @@ h3 {
 .status-message {
   padding: 20px;
 }
+
+.node-readmore a {
+  background-color: #339DC3;
+  color: white;
+  border-radius: 0.25em;
+  display: inline-block;
+  transition: .3s ease-in-out;
+  text-decoration: none;
+  padding: .8em 1em;
+  border: solid 1px #339DC3;
+}
+
+.node-readmore a:hover {
+  background-color: white;
+  color: #339DC3;
+  text-decoration: none;
+}

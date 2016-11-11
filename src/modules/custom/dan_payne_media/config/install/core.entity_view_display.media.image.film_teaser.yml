@@ -1,0 +1,29 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.film_teaser
+    - field.field.media.image.field_image_media_bundle_image
+    - image.style.60x60
+    - media_entity.bundle.image
+  module:
+    - image
+id: media.image.film_teaser
+targetEntityType: media
+bundle: image
+mode: film_teaser
+content:
+  field_image_media_bundle_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 60x60
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
