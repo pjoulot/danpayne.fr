@@ -1,0 +1,21 @@
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: film_alias_pattern
+label: 'Film Alias Pattern'
+type: 'canonical_entities:node'
+pattern: '[node:field_film_type]/[node:title]'
+selection_criteria:
+  2c5469c0-25d3-4728-bb1c-612dc558df5d:
+    id: node_type
+    bundles:
+      film: film
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2c5469c0-25d3-4728-bb1c-612dc558df5d
+selection_logic: and
+weight: -5
+relationships: {  }

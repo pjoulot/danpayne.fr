@@ -1,0 +1,21 @@
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: news_alias_pattern
+label: 'News Alias Pattern'
+type: 'canonical_entities:node'
+pattern: 'news/[node:title]'
+selection_criteria:
+  2bb29e0f-3d66-4b13-bd84-58d8363e693c:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2bb29e0f-3d66-4b13-bd84-58d8363e693c
+selection_logic: and
+weight: -5
+relationships: {  }

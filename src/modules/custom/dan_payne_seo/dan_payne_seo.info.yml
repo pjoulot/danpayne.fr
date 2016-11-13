@@ -1,0 +1,4 @@
+name: 'Dan Payne SEO'
+type: module
+core: 8.x
+dependencies:
