@@ -1,0 +1,20 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_film_type
+    - node.type.film
+  module:
+    - options
+id: node.film.field_film_type
+field_name: field_film_type
+entity_type: node
+bundle: film
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
