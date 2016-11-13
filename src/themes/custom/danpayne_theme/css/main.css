@@ -268,88 +268,96 @@ h3 {
 }
 
 .sprite-social-media-youtube {
-	background: url("../images/socialmedia.png") 0 0;
+  background: url("../images/socialmedia.png") 0 0;
 }
 
 .sprite-social-media-facebook {
-	background: url("../images/socialmedia.png") 60px 0;
+  background: url("../images/socialmedia.png") 60px 0;
 }
 
 .sprite-social-media-twitter {
-	background: url("../images/socialmedia.png") 120px 0;
+  background: url("../images/socialmedia.png") 120px 0;
 }
 
 .template-right-column--column .default-container h3 {
-	padding-left: 15px;
-	padding-right: 15px;
-	border-left: solid 15px #339DC3;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: solid 15px #339DC3;
 }
 
 .separator-list {
-	list-style-type: none;
-	padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .separator-list li {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.separator-list li a {
+  text-decoration: none;
+}
+
+.separator-list li a:hover {
+  text-decoration: underline;
 }
 
 .separator-list img {
-	height: 50px;
-	width: 50px;
-	object-fit: cover;
-	margin-right: 10px;
-	border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
 .separator-list p {
-	font-size: 13px;
+  font-size: 13px;
 }
 
 .separator-list li:not(:last-child) {
-	border-bottom: solid 1px #E1E8ED;
+  border-bottom: solid 1px #E1E8ED;
 }
 
 .list-projects-date {
-	font-size: 12px;
-	margin-left: 10px;
-	color: #969696;
-	flex-grow: 1;
-	text-align: right;
+  font-size: 12px;
+  margin-left: 10px;
+  color: #969696;
+  flex-grow: 1;
+  text-align: right;
 }
 
 .footer-website {
-	border-top: solid 1px #E1E8ED;
-	background-color: #E5F2F7;
+  border-top: solid 1px #E1E8ED;
+  background-color: #E5F2F7;
 }
 
 .footer-menu {
-	list-style-type: none;
-	display: flex;
-	justify-content: center;
-	padding: 0;
-	padding-bottom: 14px;
-	border-bottom: solid 1px #99CDE1;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  padding-bottom: 14px;
+  border-bottom: solid 1px #99CDE1;
 }
 
 .footer-menu li:not(:last-child) {
-	margin-right: 15px;
+  margin-right: 15px;
 }
 
 .footer-menu a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer-menu a:hover {
-	color: #339DC3;
+  color: #339DC3;
 }
 
 .copyright-website {
-	text-align: center;
-	font-size: 10px;
+  text-align: center;
+  font-size: 10px;
 }
 
 /* Shine */

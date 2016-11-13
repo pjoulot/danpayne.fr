@@ -73,7 +73,11 @@
 <li>
   {{ content.field_film_image }}
   {{ title_prefix }}
-  <p>{{ label }}</p>
+  {% if node.isPublished() %}
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  {% else %}
+    {{ label }}
+  {% endif %}
   {{ title_suffix }}
   <span class="list-projects-date">{{ content.field_film_date }}</span>
 </li>

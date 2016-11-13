@@ -78,11 +78,18 @@
     {{ title_prefix }}
     {% if not page %}
       <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ content.field_film_name }}</a>
+       {% if node.isPublished() %}
+         <a href="{{ url }}" rel="bookmark">{{ content.field_film_name }}</a>
+       {% else %}
+         {{ content.field_film_name }}
+       {% endif %}
       </h2>
     {% endif %}
     {{ title_suffix }}
-    {{ content|without('field_film_image', 'field_film_name', 'field_film_date', 'field_film_date_end') }}
+    {{ content|without('field_film_image', 'field_film_name', 'field_film_date', 'field_film_date_end', 'links') }}
+    {% if node.isPublished() %}
+      {{ content.links }}
+    {% endif %}
     <span class="cd-date">
       {{ content.field_film_date }}
       {% if content.field_film_date_end|render%}
