@@ -13,6 +13,7 @@ dependencies:
   - language
   - media_entity
   - menu_ui
+  - metatag
   - node
   - options
   - paragraphs

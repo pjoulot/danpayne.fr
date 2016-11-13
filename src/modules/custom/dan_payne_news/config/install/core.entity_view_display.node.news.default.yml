@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_news_comments
     - field.field.node.news.field_news_media
+    - field.field.node.news.field_news_metatag
     - field.field.node.news.field_news_tags
     - node.type.news
   module:
     - comment
+    - metatag
     - text
     - user
 id: node.news.default
@@ -31,6 +33,12 @@ content:
       pager_id: 0
     third_party_settings: {  }
     type: comment_default
+  field_news_metatag:
+    type: metatag_empty_formatter
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_news_tags:
     weight: 2
     label: hidden

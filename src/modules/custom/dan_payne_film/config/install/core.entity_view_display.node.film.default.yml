@@ -7,12 +7,14 @@ dependencies:
     - field.field.node.film.field_film_date
     - field.field.node.film.field_film_date_end
     - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_metatag
     - field.field.node.film.field_film_name
     - field.field.node.film.field_film_type
     - node.type.film
   module:
     - datetime
     - entity_reference_revisions
+    - metatag
     - text
     - user
 id: node.film.default
@@ -58,6 +60,12 @@ content:
       view_mode: film_logo
       link: false
     third_party_settings: {  }
+  field_film_metatag:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
   field_film_name:
     weight: 2
     label: hidden
