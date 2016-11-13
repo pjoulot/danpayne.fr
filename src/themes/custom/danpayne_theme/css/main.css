@@ -203,6 +203,7 @@ h3 {
 
 .news-teaser {
 	display: flex;
+	position: relative;
 }
 
 .news-teaser-content h2 a, .news-teaser-content h2 a:hover, .news-teaser-content h2 a:visited {
