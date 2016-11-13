@@ -6,7 +6,12 @@ global-styling:
       css/timeline.css: {}
   js:
     js/main.js: {}
-    
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+
 owl-carousel:
   version: 1.x
   css:
@@ -15,3 +20,6 @@ owl-carousel:
       libraries/owl-carousel/owl.theme.css: {}
   js:
     libraries/owl-carousel/owl-carousel.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
