@@ -1,0 +1,6 @@
+name: 'Dan Payne Tags'
+type: module
+core: 8.x
+dependencies:
+  - rdf
+  - taxonomy
