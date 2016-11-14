@@ -450,7 +450,7 @@ h3 {
   margin-right: 23px;
 }
 
-.breadcrumb-nav ol li a:first-child::before {
+.breadcrumb-nav ol li:first-child a::before {
   content: "";
   background-image: url("../images/house-logo.png");
   display: block;
