@@ -633,3 +633,9 @@ h3 {
   color: #339DC3;
   text-decoration: none;
 }
+
+.user-infos {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
