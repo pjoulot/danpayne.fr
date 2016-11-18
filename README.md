@@ -11,6 +11,8 @@ State: In development
 
 System: Varnish, Apache
 
+Planned to use nginx in front of Varnish to use HTTPS with let's encrypt
+
 TODO:
   - Standard Page
   - Sitemap
