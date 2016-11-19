@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.field_page_metatag
     - node.type.page
   module:
-    - metatag
     - text
     - user
 id: node.page.default
@@ -20,13 +19,8 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
-  field_page_metatag:
-    weight: 103
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
   links:
     weight: 101
 hidden:
+  field_page_metatag: true
   langcode: true

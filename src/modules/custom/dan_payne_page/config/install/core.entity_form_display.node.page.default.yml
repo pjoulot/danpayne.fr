@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.page.field_page_metatag
     - node.type.page
   module:
-    - metatag
     - path
     - text
 id: node.page.default
@@ -27,11 +26,6 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
-  field_page_metatag:
-    weight: 33
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_firehose
   langcode:
     type: language_select
     weight: 2
@@ -69,4 +63,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_page_metatag: true
