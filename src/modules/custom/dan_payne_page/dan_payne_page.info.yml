@@ -1,0 +1,11 @@
+name: 'Dan Payne Page'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - metatag
+  - node
+  - path
+  - rdf
+  - text
+  - user
