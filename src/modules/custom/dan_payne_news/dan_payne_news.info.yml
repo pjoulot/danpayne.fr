@@ -4,6 +4,7 @@ core: 8.x
 dependencies:
   - comment
   - dan_payne_media
+  - dan_payne_tags
   - entity_browser
   - entity_reference_revisions
   - field
