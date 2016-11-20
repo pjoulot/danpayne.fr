@@ -1,0 +1,7 @@
+name: 'Dan Payne Configuration'
+type: module
+core: 8.x
+dependencies:
+  - ckeditor
+  - editor
+  - filter

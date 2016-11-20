@@ -13,6 +13,42 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "colorbutton",
+                "version": "4.6",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "http://download.ckeditor.com/colorbutton/releases/colorbutton_4.6.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "font",
+                "version": "4.6",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "http://download.ckeditor.com/font/releases/font_4.6.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "panelbutton",
+                "version": "4.6",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "http://download.ckeditor.com/panelbutton/releases/panelbutton_4.6.0.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -40,7 +76,12 @@
         "drupal/pathauto": "1.0-beta1",
         "drupal/metatag": "1.0-beta11",
         "drupal/robotstxt": "1.0",
-        "drupal/simple_sitemap": "2.7"
+        "drupal/simple_sitemap": "2.7",
+        "drupal/ckeditor_font": "1.0",
+        "drupal/colorbutton": "1.0",
+        "colorbutton": "4.6",
+        "font": "4.6",
+        "panelbutton": "4.6"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -75,6 +116,9 @@
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
+    },
+    "config": {
+        "secure-http": false
     },
     "extra": {
         "installer-paths": {
