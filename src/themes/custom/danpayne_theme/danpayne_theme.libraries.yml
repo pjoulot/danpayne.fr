@@ -16,10 +16,10 @@ owl-carousel:
   version: 1.x
   css:
     theme:
-      libraries/owl-carousel/owl.carousel.css: {}
-      libraries/owl-carousel/owl.theme.css: {}
+      /libraries/owlcarousel/owl-carousel/owl.carousel.css: {}
+      /libraries/owlcarousel/owl-carousel/owl.theme.css: {}
   js:
-    libraries/owl-carousel/owl-carousel.js: {}
+    /libraries/owlcarousel/owl-carousel/owl.carousel.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once

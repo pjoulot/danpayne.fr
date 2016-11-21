@@ -49,6 +49,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "owlcarousel",
+                "version": "1.3",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/OwlFonk/OwlCarousel/archive/1.3.2.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -81,7 +93,8 @@
         "drupal/colorbutton": "1.0",
         "colorbutton": "4.6",
         "font": "4.6",
-        "panelbutton": "4.6"
+        "panelbutton": "4.6",
+        "owlcarousel": "1.3"
     },
     "require-dev": {
         "behat/mink": "~1.7",
