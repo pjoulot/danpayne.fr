@@ -647,7 +647,7 @@ h3 {
   margin-bottom: 15px;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], input[type="password"] {
   height: 46px;
   padding: 10px 16px;
   line-height: 1.3333333;
@@ -677,7 +677,7 @@ textarea {
   font-family: 'Open Sans',sans-serif;
 }
 
-textarea:focus, input[type="text"]:focus, input[type="email"]:focus {
+textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   border-color: #66AFE9;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
 }
