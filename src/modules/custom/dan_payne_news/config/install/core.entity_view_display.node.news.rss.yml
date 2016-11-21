@@ -1,0 +1,40 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.news.body
+    - field.field.node.news.field_news_comments
+    - field.field.node.news.field_news_media
+    - field.field.node.news.field_news_metatag
+    - field.field.node.news.field_news_tags
+    - node.type.news
+  module:
+    - text
+    - user
+id: node.news.rss
+targetEntityType: node
+bundle: news
+mode: rss
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_news_media:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: news_teaser
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_news_comments: true
+  field_news_metatag: true
+  field_news_tags: true
+  langcode: true
+  links: true
