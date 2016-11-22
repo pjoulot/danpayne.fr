@@ -255,7 +255,7 @@ display:
     display_title: Feed
     position: 2
     display_options:
-      sitename_title: true
+      sitename_title: false
       path: rss.xml
       displays:
         page_1: page_1
@@ -277,7 +277,7 @@ display:
           relationship: none
           view_mode: rss
       display_extenders: {  }
-      enabled: false
+      enabled: true
     cache_metadata:
       contexts:
         - 'languages:language_interface'
