@@ -641,6 +641,28 @@ h3 {
   cursor: pointer;
 }
 
+a.feed-icon {
+  background-color: #F99C2D;
+  color: white;
+  border-radius: 0.25em;
+  display: inline-block;
+  text-decoration: none;
+  padding: .8em 1em;
+  border: solid 1px #F99C2D;
+  padding-left: 50px;
+  background-image: url("../images/rss.png");
+  background-repeat: no-repeat;
+  background-position: 10px 8px;
+}
+
+a.feed-icon:hover {
+  background-color: white;
+  color: #F99C2D;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: url("../images/rsshover.png");
+}
+
 .user-infos {
   float: right;
   margin-left: 15px;
