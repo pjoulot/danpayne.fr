@@ -1,0 +1,36 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.convention.body
+    - field.field.node.convention.field_convention_bckg_image
+    - field.field.node.convention.field_convention_begin_date
+    - field.field.node.convention.field_convention_end_date
+    - field.field.node.convention.field_convention_logo
+    - field.field.node.convention.field_convention_place
+    - node.type.convention
+  module:
+    - text
+    - user
+id: node.convention.teaser
+targetEntityType: node
+bundle: convention
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_convention_bckg_image: true
+  field_convention_begin_date: true
+  field_convention_end_date: true
+  field_convention_logo: true
+  field_convention_place: true
+  langcode: true

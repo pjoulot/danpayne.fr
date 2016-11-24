@@ -1,0 +1,15 @@
+name: 'Dan Payne Convention'
+type: module
+core: 8.x
+dependencies:
+  - dan_payne_media
+  - datetime
+  - field
+  - language
+  - media_entity
+  - menu_ui
+  - metatag
+  - node
+  - path
+  - text
+  - user

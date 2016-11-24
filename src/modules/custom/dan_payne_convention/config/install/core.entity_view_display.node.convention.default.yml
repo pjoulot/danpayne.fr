@@ -1,0 +1,74 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.convention.body
+    - field.field.node.convention.field_convention_bckg_image
+    - field.field.node.convention.field_convention_begin_date
+    - field.field.node.convention.field_convention_end_date
+    - field.field.node.convention.field_convention_logo
+    - field.field.node.convention.field_convention_metatag
+    - field.field.node.convention.field_convention_place
+    - node.type.convention
+  module:
+    - datetime
+    - metatag
+    - text
+    - user
+id: node.convention.default
+targetEntityType: node
+bundle: convention
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_convention_bckg_image:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_convention_begin_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_convention_end_date:
+    weight: 105
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+  field_convention_logo:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_convention_metatag:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+  field_convention_place:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  links:
+    weight: 100
+hidden:
+  langcode: true

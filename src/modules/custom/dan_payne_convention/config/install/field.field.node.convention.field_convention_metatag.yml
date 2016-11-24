@@ -1,0 +1,22 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_convention_metatag
+    - node.type.convention
+  module:
+    - metatag
+id: node.convention.field_convention_metatag
+field_name: field_convention_metatag
+entity_type: node
+bundle: convention
+label: Metatags
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'a:0:{}'
+default_value_callback: ''
+settings: {  }
+field_type: metatag
