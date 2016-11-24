@@ -18,3 +18,4 @@ TODO:
   - Thème mobile
   - Liste des tags
   - Security check
+  - Module voice search
