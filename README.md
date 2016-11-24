@@ -14,8 +14,8 @@ System: Varnish, Apache
 Planned to use nginx in front of Varnish to use HTTPS with let's encrypt
 
 TODO:
-  - Flux RSS
   - Conventions
   - Thème mobile
   - Liste des tags
   - Security check
+  - Module voice search
