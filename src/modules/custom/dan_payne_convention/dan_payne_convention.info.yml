@@ -4,6 +4,7 @@ core: 8.x
 dependencies:
   - dan_payne_media
   - datetime
+  - entity_browser
   - field
   - language
   - media_entity

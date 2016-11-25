@@ -28,34 +28,36 @@ content:
     third_party_settings: {  }
   field_convention_bckg_image:
     weight: 103
-    label: above
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_convention_begin_date:
     weight: 104
-    label: above
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      date_format: d/m/Y
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_custom
   field_convention_end_date:
     weight: 105
-    label: above
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      date_format: d/m/Y
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_custom
   field_convention_logo:
     weight: 102
-    label: above
+    label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_convention_metatag:
     weight: 107
     label: above
@@ -64,11 +66,13 @@ content:
     type: metatag_empty_formatter
   field_convention_place:
     weight: 106
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true
