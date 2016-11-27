@@ -729,6 +729,17 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   color: white;
 }
 
+.convention-countdown-container .convention-countdown {
+  font-size: 110%;
+  text-shadow: 0px 0px 2px #004B6F, 0px 0px 15px #00ACFF;
+  color: white;
+}
+
+.convention-countdown-container .convention-countdown span {
+  font-weight: bold;
+  font-size: 140%;
+}
+
 .convention-countdown-infos {
   position: absolute;
   margin-left: auto;
