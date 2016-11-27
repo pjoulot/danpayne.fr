@@ -1,0 +1,13 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 115x115
+label: 115x115
+effects:
+  502a49b9-1d90-4588-9347-3bc2d987f78f:
+    uuid: 502a49b9-1d90-4588-9347-3bc2d987f78f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 115
+      height: 115

@@ -754,3 +754,10 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   bottom: 10px;
   right: 10px;
 }
+
+.countdown-actor-photo img {
+  border-radius: 50%;
+  width: 115px;
+  height: 115px;
+  margin-top: 10px;
+}

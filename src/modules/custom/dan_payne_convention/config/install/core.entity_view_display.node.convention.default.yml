@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.convention.body
+    - field.field.node.convention.field_convention_actor_photo
     - field.field.node.convention.field_convention_bckg_image
     - field.field.node.convention.field_convention_begin_date
     - field.field.node.convention.field_convention_end_date
@@ -23,11 +24,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 1
     settings: {  }
     third_party_settings: {  }
+  field_convention_actor_photo:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: convention_actor_photo
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
   field_convention_bckg_image:
-    weight: 103
+    weight: 4
     label: hidden
     settings:
       view_mode: convention_countdown
@@ -35,7 +44,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_convention_begin_date:
-    weight: 104
+    weight: 5
     label: hidden
     settings:
       timezone_override: ''
@@ -43,7 +52,7 @@ content:
     third_party_settings: {  }
     type: datetime_custom
   field_convention_end_date:
-    weight: 105
+    weight: 6
     label: hidden
     settings:
       timezone_override: ''
@@ -51,7 +60,7 @@ content:
     third_party_settings: {  }
     type: datetime_custom
   field_convention_logo:
-    weight: 102
+    weight: 2
     label: hidden
     settings:
       view_mode: convention_countdown_logo
@@ -59,19 +68,19 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_convention_metatag:
-    weight: 107
-    label: above
+    weight: 8
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
   field_convention_place:
-    weight: 106
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
   links:
-    weight: 100
+    weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden:
