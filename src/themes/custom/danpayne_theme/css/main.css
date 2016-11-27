@@ -47,7 +47,7 @@ h3 {
   position: relative;
 }
 
-.header-banner-overlay {
+.black-overlay {
   display: block;
   position: absolute;
   height: 100%;
@@ -711,4 +711,35 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
 .form-item label{
   margin: 10px;
   display: inline-block;
+}
+
+.convention-countdown-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: auto;
+  width: 750px;
+  height: 250px;
+}
+
+.convention-countdown-container h3 {
+  border: none;
+  font-size: 170%;
+  text-shadow: 0px 0px 2px #004B6F, 0px 0px 15px #00ACFF;
+  color: white;
+}
+
+.convention-countdown-infos {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 20px;
+}
+
+.countdown-convention-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }

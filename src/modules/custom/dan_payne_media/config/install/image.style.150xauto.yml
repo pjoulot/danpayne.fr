@@ -1,0 +1,14 @@
+langcode: fr
+status: true
+dependencies: {  }
+name: 150xauto
+label: 150xauto
+effects:
+  a508b57b-edd0-4016-b222-d6cec919ad45:
+    uuid: a508b57b-edd0-4016-b222-d6cec919ad45
+    id: image_scale
+    weight: 1
+    data:
+      width: 150
+      height: null
+      upscale: false

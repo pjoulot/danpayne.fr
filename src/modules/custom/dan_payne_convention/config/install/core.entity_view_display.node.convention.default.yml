@@ -30,8 +30,8 @@ content:
     weight: 103
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: convention_countdown
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_convention_begin_date:
@@ -54,8 +54,8 @@ content:
     weight: 102
     label: hidden
     settings:
-      link: true
-      view_mode: default
+      view_mode: convention_countdown_logo
+      link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_convention_metatag:

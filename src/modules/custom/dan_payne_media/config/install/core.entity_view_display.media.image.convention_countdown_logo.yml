@@ -1,0 +1,29 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.convention_countdown_logo
+    - field.field.media.image.field_image_media_bundle_image
+    - image.style.150xauto
+    - media_entity.bundle.image
+  module:
+    - image
+id: media.image.convention_countdown_logo
+targetEntityType: media
+bundle: image
+mode: convention_countdown_logo
+content:
+  field_image_media_bundle_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 150xauto
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true
