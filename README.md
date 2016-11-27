@@ -19,3 +19,4 @@ TODO:
   - Liste des tags
   - Security check
   - Module voice search
+  - Find application with web VR using aframe
