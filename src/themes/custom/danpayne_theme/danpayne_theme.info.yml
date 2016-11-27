@@ -7,7 +7,6 @@ core: 8.x
 libraries:
   - danpayne_theme/global-styling
   - danpayne_theme/owl-carousel
-  - danpayne_theme/countdown
 regions:
   header: Header
   top_content: Top Content

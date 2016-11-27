@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_preprocess_node();
+ */
+function dan_payne_convention_preprocess_node(&$variables) {
+  if($variables['node']->getType() == "convention" && $variables['view_mode'] == 'full') {
+    $variables['#attached']['library'][] = 'danpayne_theme/countdown';
+    
+    $date = $variables['node']->get('field_convention_begin_date')->getValue();
+    $result = 'undefined';
+    if (!empty($date)) {
+      $result = $date[0]['value'];
+    }
+    $variables['#attached']['drupalSettings']['dan_payne']['countdown']['date'] = $result;
+  }
+}

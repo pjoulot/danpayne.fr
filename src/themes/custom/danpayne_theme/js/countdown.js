@@ -1,6 +1,6 @@
 countdownManager = {
     // Configuration
-    targetTime: new Date('2017-11-05 00:00:00'), // Date cible du compte à rebours (00:00:00)
+    targetTime: new Date(), // Date cible du compte à rebours (00:00:00)
     displayElement: { // Elements HTML où sont affichés les informations
         day:  null,
         hour: null,
@@ -9,7 +9,8 @@ countdownManager = {
     },
      
     // Initialisation du compte à rebours (à appeler 1 fois au chargement de la page)
-    init: function(){
+    init: function(initDate){
+    	this.targetTime = new Date(initDate);
         // Récupération des références vers les éléments pour l'affichage
         // La référence n'est récupérée qu'une seule fois à l'initialisation pour optimiser les performances
         this.displayElement.day  = jQuery('#countdown_day');
@@ -58,8 +59,12 @@ countdownManager = {
         return diff;
     }
 };
- 
-jQuery(function($){
-    // Lancement du compte à rebours au chargement de la page
-    countdownManager.init();
-});
+
+(function ($, Drupal) {
+  Drupal.behaviors.danCountdown = {
+    attach: function (context, settings) {
+      var date = settings.dan_payne.countdown.date;
+      countdownManager.init(date);
+    }
+  };
+})(jQuery, Drupal);
