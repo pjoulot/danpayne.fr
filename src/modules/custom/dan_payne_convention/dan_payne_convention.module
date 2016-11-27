@@ -12,6 +12,11 @@ function dan_payne_convention_preprocess_node(&$variables) {
     if (!empty($date)) {
       $result = $date[0]['value'];
     }
-    $variables['#attached']['drupalSettings']['dan_payne']['countdown']['date'] = $result;
+
+    $variables['event_passed'] = TRUE;
+    if (!empty($result) && strtotime($result) > time()) {
+      $variables['#attached']['drupalSettings']['dan_payne']['countdown']['date'] = $result;
+      $variables['event_passed'] = FALSE;
+    }
   }
 }

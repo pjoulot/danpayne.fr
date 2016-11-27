@@ -95,18 +95,29 @@
       <div class="black-overlay"></div>
       {{ content.field_convention_bckg_image }}
       <div class="convention-countdown-infos">
-        {# @TODO correct the translation with a better way #}
-        <h3>
-          {{ "Meet Dan at"|t }}
-          {{ label }}
-          {{ "in"|t }}
-        </h3>
-        <div id="countdown" class="convention-countdown">
-          <span id="countdown_day" >--</span> jours
-          <span id="countdown_hour">--</span> heures
-          <span id="countdown_min" >--</span> minutes
-          <span id="countdown_sec" >--</span> secondes
-        </div>
+        {% if not event_passed %}
+          {# @TODO correct the translation with a better way #}
+          <h3>
+            {{ "Meet Dan at"|t }}
+            {{ label }}
+            {{ "in"|t }}
+          </h3>
+          <div id="countdown" class="convention-countdown">
+            <span id="countdown_day" >--</span> jours
+            <span id="countdown_hour">--</span> heures
+            <span id="countdown_min" >--</span> minutes
+            <span id="countdown_sec" >--</span> secondes
+          </div>
+        {% else %}
+          <h3>
+            {{ "Dan attended at"|t }}
+            {{ label }}
+          </h3>
+          <div class="convention-countdown">
+            <span>{{ "from"|t }} {{ content.field_convention_begin_date }}</span>
+            <span>{{ "to"|t }} {{ content.field_convention_end_date }}</span>
+          </div>
+        {% endif %}
         <div class="countdown-actor-photo">
           {{ content.field_convention_actor_photo }}
         </div>
