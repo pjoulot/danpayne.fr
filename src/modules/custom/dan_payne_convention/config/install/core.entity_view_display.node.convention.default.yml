@@ -68,20 +68,15 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
   field_convention_metatag:
-    weight: 8
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: metatag_empty_formatter
-  field_convention_place:
     weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: metatag_empty_formatter
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_convention_place: true
   langcode: true
