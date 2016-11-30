@@ -2,6 +2,7 @@ name: 'Dan Payne Convention'
 type: module
 core: 8.x
 dependencies:
+  - block
   - dan_payne_media
   - datetime
   - entity_browser
@@ -12,6 +13,7 @@ dependencies:
   - metatag
   - node
   - path
+  - system
   - text
   - user
   - views

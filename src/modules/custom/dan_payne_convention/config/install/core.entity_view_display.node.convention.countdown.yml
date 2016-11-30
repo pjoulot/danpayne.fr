@@ -1,0 +1,61 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.countdown
+    - field.field.node.convention.body
+    - field.field.node.convention.field_convention_actor_photo
+    - field.field.node.convention.field_convention_bckg_image
+    - field.field.node.convention.field_convention_begin_date
+    - field.field.node.convention.field_convention_end_date
+    - field.field.node.convention.field_convention_logo
+    - field.field.node.convention.field_convention_metatag
+    - field.field.node.convention.field_convention_place
+    - node.type.convention
+  module:
+    - datetime
+    - user
+id: node.convention.countdown
+targetEntityType: node
+bundle: convention
+mode: countdown
+content:
+  field_convention_actor_photo:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: convention_actor_photo
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_convention_bckg_image:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: convention_countdown
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_convention_begin_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: d/m/Y
+    third_party_settings: {  }
+    type: datetime_custom
+  field_convention_logo:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: convention_countdown_logo
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+hidden:
+  body: true
+  field_convention_end_date: true
+  field_convention_metatag: true
+  field_convention_place: true
+  langcode: true
+  links: true

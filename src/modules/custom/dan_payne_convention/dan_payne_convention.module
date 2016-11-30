@@ -4,7 +4,7 @@
  * Implements hook_preprocess_node();
  */
 function dan_payne_convention_preprocess_node(&$variables) {
-  if($variables['node']->getType() == "convention" && $variables['view_mode'] == 'full') {
+  if($variables['node']->getType() == "convention" && ($variables['view_mode'] == 'full' || $variables['view_mode'] == 'countdown')) {
     $variables['#attached']['library'][] = 'danpayne_theme/countdown';
     
     $date = $variables['node']->get('field_convention_begin_date')->getValue();
