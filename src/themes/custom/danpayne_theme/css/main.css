@@ -773,6 +773,10 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   margin-top: 10px;
 }
 
+.mobile-menu-button {
+  display: none;
+}
+
 @media screen and (max-width: 1264px) {
   .template-right-column--column {
     display: none;
