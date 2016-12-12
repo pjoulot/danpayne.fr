@@ -837,6 +837,43 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   }
 }
 
+@media screen and (max-width: 750px) {
+  .convention-countdown-container .black-overlay {
+    z-index: 1;
+  }
+  .convention-countdown-container>img {
+    position: absolute;
+    left: 0;
+  }
+  .convention-countdown-container {
+    width: 100%;
+  }
+  .convention-countdown-container h3 {
+    font-size: 150%;
+  }
+  .convention-countdown-container .convention-countdown {
+    font-size: 100%;
+  }
+  .convention-countdown-container .convention-countdown span {
+    font-size: 120%;
+  }
+  .convention-countdown-infos {
+    z-index: 2;
+    top: 0;
+  }
+  .countdown-convention-logo {
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .convention-countdown-container h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 130%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .news-teaser-content {
     padding-left: 0;
