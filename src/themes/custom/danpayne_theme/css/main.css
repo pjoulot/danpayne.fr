@@ -573,10 +573,12 @@ h3 {
 
 .character-list {
   display: flex;
+  flex-wrap:wrap;
 }
 
 .character-item {
-  margin-right: 20px;
+  margin: auto;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
   background: #000;
@@ -727,6 +729,7 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
 .convention-countdown-container {
   position: relative;
   text-align: center;
+  overflow: hidden;
   color: white;
   margin: auto;
   width: 750px;
@@ -864,6 +867,13 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   .countdown-convention-logo {
     z-index: 2;
   }
+  
+  .character-desc {
+    opacity: 1;
+  }
+  .character-item img {
+    opacity: 0.3;
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -875,6 +885,10 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
 }
 
 @media screen and (max-width: 500px) {
+  .main-content-block {
+    padding: 10px;
+  }
+
   .news-teaser-content {
     padding-left: 0;
     padding-right: 5px;
@@ -937,5 +951,15 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
 
   .website-content {
     padding-top: 0;
+  }
+  
+  .film-info-container {
+    text-align: center;
+  }
+  
+  .film-info {
+    margin-left: 0;
+    display: inline-block;
+    float: none;
   }
 }
