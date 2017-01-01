@@ -91,6 +91,7 @@
         "drupal/simple_sitemap": "2.7",
         "drupal/ckeditor_font": "1.0",
         "drupal/colorbutton": "1.0",
+        "drupal/shield": "1.0",
         "colorbutton": "4.6",
         "font": "4.6",
         "panelbutton": "4.6",
