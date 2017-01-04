@@ -9,14 +9,9 @@ CMS: Drupal 8
 
 State: In development
 
-System: Varnish, Apache
-
-Planned to use nginx in front of Varnish to use HTTPS with let's encrypt
+System: Varnish, Apache, Nginx, Let's Encrypt
 
 TODO:
-  - Conventions
-  - Thème mobile
-  - Liste des tags
   - Security check
   - Module voice search
   - Find application with web VR using aframe
