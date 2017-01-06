@@ -12,6 +12,8 @@ State: In development
 System: Varnish, Apache, Nginx, Let's Encrypt
 
 TODO:
+  - Contribution in production
+  - Update the breadcrumb
   - Security check
   - Module voice search
   - Find application with web VR using aframe
