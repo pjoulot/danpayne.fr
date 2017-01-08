@@ -59,6 +59,12 @@ sub vcl_init {
 # which backend to use.
 # also used to modify the request
 sub vcl_recv {
+
+  # Redirect all http request to https.
+  if ( (req.http.host ~ "^(?i)www.danpayne.lxc" || req.http.host ~ "^(?i)danpayne.lxc") && req.http.X-Forwarded-Proto !~ "(?i)https") {
+    return (synth(750, ""));
+  }
+
   set req.backend_hint = vdir.backend(); # send all traffic to the vdir director
 
   # Normalize the header, remove the port (in case you're testing this on various TCP ports)
@@ -456,6 +462,12 @@ sub vcl_purge {
 
 
 sub vcl_synth {
+  if (resp.status == 750) {
+    # Redirect to https if it is an http request.
+    set resp.status = 301;
+    set resp.http.Location = "https://danpayne.lxc" + req.url;
+    return(deliver);
+  }
   if (resp.status == 720) {
     # We use this special error status 720 to force redirects with 301 (permanent) redirects
     # To use this, call the following from anywhere in vcl_recv: return (synth(720, "http://host/new.html"));
