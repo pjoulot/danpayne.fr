@@ -4,7 +4,7 @@
 FEATURES=0
 ALLOW_SSH=1
 UPDATE_CONF=0
-
+SITENAME="danpayne"
 
 
 ########## General variables ##########
@@ -16,7 +16,7 @@ GROUP=10000
 
 ########## Drupal variables ##########
 DRUPAL_PROFIL="standard"
-DRUPAL_LOCALE="en"
+DRUPAL_LOCALE="fr"
 DRUPAL_ADMIN_USER=admin
 DRUPAL_ADMIN_PWD=drupal
 if [ -z "$DRUPAL_DB_URL" ]
@@ -31,14 +31,20 @@ fi
 
 
 ########## Project variables ##########
-PROJECT_PATH="/home/drupal/danpayne"
+PROJECT_PATH="/home/drupal/$SITENAME"
 
 
 
 ########## Environment variables ##########
 case "$ENV" in
     dev)
-        WWW_PATH="/var/www/danpayne/web"
+        WWW_PATH="/var/www/$SITENAME/web"
+        FEATURES=0
+        ALLOW_SSH=0
+        UPDATE_CONF=0
+        ;;
+    prod)
+        WWW_PATH="/var/www/$SITENAME/web"
         FEATURES=0
         ALLOW_SSH=0
         UPDATE_CONF=0

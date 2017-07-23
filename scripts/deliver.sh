@@ -29,12 +29,14 @@ do
     esac
 done
 
-# Check variables.
+# Initialize tag if it is not passed
+now=`date +'%m-%d-%Y--%H-%M'`
 if [ -z "$TAG" ]
 then
-    echo "missing argument 'tag'."
-    exit 0
+    TAG="$ENV-$now"
 fi
+
+# Check variables.
 if [ -z "$ENV" ]
 then
     echo "missing argument 'env'."
@@ -46,31 +48,56 @@ fi
 set -e
 set -o pipefail
 
+# Check changes in the repo.
+if git diff-index --quiet HEAD --; then
+  echo "The repo has no changes in local, continue..."
+else
+  echo "There are some changes in the local repo, aborting delivery."
+  exit 0
+fi
+
+branch_name=$ENV
+if [ "$ENV" == "prod" ]; then
+  branch_name="master"
+fi
+
+# Check that the environment branch exists.
+if [ ! `git branch --list $branch_name `]
+then
+   echo "The branch $branch_name does not exist."
+fi
+
 echo "Changing to the environment branch"
-git checkout $ENV
+git checkout $branch_name
 
 echo "Purging local modifications..."
 git reset --hard HEAD
 
-echo "Grabbing the latest code from the repository..."
-git fetch --tags
+# Create a tag for each delivery.
+#git tag "$TAG"
+#git push --tags
 
-echo "Switch to appropriate tag (${TAG})..."
-git checkout tags/$TAG
+
+archive_name=$SITENAME-$now.tgz
+
+# Create releases folder if it does not exists.
+if [ ! -d "$DIRECTORY" ]; then
+  mkdir releases
+fi
 
 # Create the folder with the files that need to be updated.
-mkdir /home/drupal/releases/$TAG
-mkdir /home/drupal/releases/$TAG/web
-mkdir /home/drupal/releases/$TAG/web/themes
-mkdir /home/drupal/releases/$TAG/web/modules
-mkdir /home/drupal/releases/$TAG/web/sites
-mkdir /home/drupal/releases/$TAG/web/sites/default
+mkdir releases/$TAG
+mkdir releases/$TAG/web
+mkdir releases/$TAG/web/themes
+mkdir releases/$TAG/web/modules
+mkdir releases/$TAG/web/sites
+mkdir releases/$TAG/web/sites/default
 # Copy the custom modules
-cp -R /home/drupal/danpayne/src/modules/custom /home/drupal/releases/$TAG/web/modules/
+cp -R src/modules/custom releases/$TAG/web/modules/
 # Copy the custom themes
-cp -R /home/drupal/danpayne/src/themes/custom /home/drupal/releases/$TAG/web/themes/
+cp -R src/themes/custom releases/$TAG/web/themes/
 # Copy the composer.json
-cp -f /home/drupal/danpayne/conf/drupal/composer.json /home/drupal/releases/$TAG/
+cp -f conf/drupal/composer.json releases/$TAG/
 # Copy the local settings and services files
-cp -f /home/drupal/danpayne/conf/drupal/default/settings.local.php /home/drupal/releases/$TAG/web/sites/default/
-cp -f /home/drupal/danpayne/conf/drupal/default/local.services.yml /home/drupal/releases/$TAG/web/sites/default/
+cp -f conf/drupal/default/settings.local.php releases/$TAG/web/sites/default/
+cp -f conf/drupal/default/local.services.yml releases/$TAG/web/sites/default/
