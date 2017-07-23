@@ -43,6 +43,9 @@ then
     exit 0
 fi
 
+# Load project environment variables.
+. `dirname $0`/env.sh
+
 # Stop executing the script if any command fails.
 # See http://stackoverflow.com/a/4346420/442022 for details.
 set -e
@@ -77,27 +80,42 @@ git reset --hard HEAD
 #git tag "$TAG"
 #git push --tags
 
-
 archive_name=$SITENAME-$now.tgz
 
 # Create releases folder if it does not exists.
-if [ ! -d "$DIRECTORY" ]; then
+if [ ! -d "releases" ]; then
   mkdir releases
 fi
 
-# Create the folder with the files that need to be updated.
+echo "*** Create the package ***"
 mkdir releases/$TAG
 mkdir releases/$TAG/web
 mkdir releases/$TAG/web/themes
 mkdir releases/$TAG/web/modules
-mkdir releases/$TAG/web/sites
-mkdir releases/$TAG/web/sites/default
 # Copy the custom modules
 cp -R src/modules/custom releases/$TAG/web/modules/
 # Copy the custom themes
 cp -R src/themes/custom releases/$TAG/web/themes/
 # Copy the composer.json
 cp -f conf/drupal/composer.json releases/$TAG/
-# Copy the local settings and services files
-cp -f conf/drupal/default/settings.local.php releases/$TAG/web/sites/default/
-cp -f conf/drupal/default/local.services.yml releases/$TAG/web/sites/default/
+# Create the release archive.
+cd releases/ && tar -zcf $archive_name $TAG && cd ..
+rm -Rf releases/$TAG
+echo "*** Upload the package ***"
+scp -P $DELIVERY_PORT releases/$archive_name $DELIVERY_USER@$DELIVERY_SERVER:/home/$DELIVERY_USER/
+echo "*** Installing new source code ***"
+commands="tar -zxf /home/$DELIVERY_USER/$archive_name -C /home/$DELIVERY_USER/;rm -f /home/$DELIVERY_USER/$archive_name;"
+commands="$commands rsync -r --delete /home/$DELIVERY_USER/$TAG/web/modules/custom $DELIVERY_DIR/web/src/modules/custom;"
+commands="$commands rsync -r --delete /home/$DELIVERY_USER/$TAG/web/themes/custom $DELIVERY_DIR/web/src/themes/custom;"
+commands="$commands rsync /home/$DELIVERY_USER/$TAG/composer.json $DELIVERY_DIR/composer.json;"
+commands="$commands chmod -R 774 $DELIVERY_DIR; chown -R $DELIVERY_USER:www-data $DELIVERY_DIR;"
+commands="$commands rm -Rf /home/$DELIVERY_USER/$TAG"
+ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
+echo "*** Drush commands ***"
+commands="cd $DELIVERY_DIR/web;"
+commands="$commands drush updb; drush cr"
+commands="$commands drush entities-update -y"
+commands="$commands drush fra -y; drush cr"
+commands="$commands drush locale-check; drush locale-update; drush cr"
+ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
+echo "*** Install completed successfully ***"

@@ -21,14 +21,17 @@ DRUPAL_ADMIN_USER=admin
 DRUPAL_ADMIN_PWD=drupal
 if [ -z "$DRUPAL_DB_URL" ]
 then
-    DRUPAL_DB_URL=mysql://danpayne:danpayne@localhost/danpayne
+    DRUPAL_DB_URL=mysql://$SITENAME:$SITENAME@localhost/$SITENAME
 fi
 if [ -z "$DRUPAL_ADMIN_MAIL" ]
 then
     DRUPAL_ADMIN_MAIL="admin@example.com"
 fi
 
-
+DELIVERY_USER=philippe
+DELIVERY_SERVER="193.70.0.251"
+DELIVERY_PORT=22
+DELIVERY_DIR="/var/www/$SITENAME"
 
 ########## Project variables ##########
 PROJECT_PATH="/home/drupal/$SITENAME"
