@@ -8,8 +8,8 @@
           margin: 10,
           loop: true,
           autoplay: true,
-          autoplay: true,
-          autoplaySpeed: 300
+          autoplaySpeed: 1000,
+          autoplayTimeout: 7000
         })
       });
       
@@ -28,7 +28,8 @@
           margin: 10,
           loop: true,
           autoplay: true,
-          autoplaySpeed: 300
+          autoplaySpeed: 1000,
+          autoplayTimeout: 7000
         });
       });
     }
