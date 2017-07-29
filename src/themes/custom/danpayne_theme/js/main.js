@@ -2,11 +2,15 @@
   Drupal.behaviors.DanPayneTheme = {
     attach: function (context, settings) {
       $(context).find('input.DanPayneThemeBehavior').once('DanPayneThemeBehavior').each(function () {
-        $(".owl-carousel").owlCarousel({
-          autoPlay: true,
-          slideSpeed : 300,
-          singleItem:true
-        });
+
+        $('.owl-carousel').owlCarousel({
+          items: 1,
+          margin: 10,
+          loop: true,
+          autoplay: true,
+          autoplay: true,
+          autoplaySpeed: 300
+        })
       });
       
       $(".js-mobile-menu-button").on('click', function() {
@@ -19,10 +23,12 @@
         }
       });
       jQuery(document).ready(function() {
-        jQuery(".owl-carousel").owlCarousel({
-          autoPlay: true,
-          slideSpeed : 300,
-          singleItem:true
+        $('.owl-carousel').owlCarousel({
+          items: 1,
+          margin: 10,
+          loop: true,
+          autoplay: true,
+          autoplaySpeed: 300
         });
       });
     }

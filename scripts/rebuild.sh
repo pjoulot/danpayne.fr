@@ -71,6 +71,12 @@ then
     ln -s $PROJECT_PATH/conf/drupal/default/local.services.yml $WWW_PATH/sites/default/local.services.yml
 fi
 
+# Includes the local files
+SETTING_FILE_LOCATION="$WWW_PATH/sites/default/settings.php"
+LOCAL_SETTINGS_LINE=$(cat -n "$SETTING_FILE_LOCATION" | grep "if (file_exists(\$app_root . '/' . \$site_path . '/settings.local.php')) {" | awk '{print $1;}')
+LOCAL_SETTINGS_LINE_END=$((LOCAL_SETTINGS_LINE+2))
+sed -i "$LOCAL_SETTINGS_LINE,$LOCAL_SETTINGS_LINE_END s/^.//" $SETTING_FILE_LOCATION
+
 # Fix perms.
 sudo `dirname $0`/fix-perms.sh
 

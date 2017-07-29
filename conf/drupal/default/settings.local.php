@@ -21,5 +21,5 @@ $databases['default']['default'] = array (
 
 $settings['install_profile'] = standard;
 
-
+$settings['hash_salt'] = 'bfV7NL54GnZQNjtlljoBm3WcfrOGh3AriN_visDsHZWSGh8-VGnXnOzVK-ZHSpKL9uzOQpiXZw';
 
