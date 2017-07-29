@@ -27,6 +27,7 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_convention_actor_photo:
     weight: 3
     label: hidden
@@ -35,6 +36,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_convention_bckg_image:
     weight: 4
     label: hidden
@@ -43,6 +45,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_convention_begin_date:
     weight: 5
     label: hidden
@@ -51,6 +54,7 @@ content:
       date_format: d/m/Y
     third_party_settings: {  }
     type: datetime_custom
+    region: content
   field_convention_end_date:
     weight: 6
     label: hidden
@@ -59,6 +63,7 @@ content:
       date_format: d/m/Y
     third_party_settings: {  }
     type: datetime_custom
+    region: content
   field_convention_logo:
     weight: 2
     label: hidden
@@ -67,16 +72,19 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_convention_metatag:
     weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_convention_place: true
   langcode: true

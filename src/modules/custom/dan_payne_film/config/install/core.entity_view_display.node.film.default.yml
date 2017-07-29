@@ -28,6 +28,7 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_film_character_list:
     type: entity_reference_revisions_entity_view
     weight: 6
@@ -36,6 +37,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   field_film_date:
     weight: 3
     label: hidden
@@ -44,6 +46,7 @@ content:
       format_type: html_year
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_film_date_end:
     weight: 4
     label: hidden
@@ -52,6 +55,7 @@ content:
       format_type: html_year
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_film_image:
     type: entity_reference_entity_view
     weight: 1
@@ -60,12 +64,14 @@ content:
       view_mode: film_logo
       link: false
     third_party_settings: {  }
+    region: content
   field_film_metatag:
     weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
+    region: content
   field_film_name:
     weight: 2
     label: hidden
@@ -73,10 +79,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_film_type: true
   langcode: true

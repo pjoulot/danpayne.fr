@@ -21,6 +21,7 @@ content:
       image_style: autox450
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true

@@ -2,6 +2,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - entity_browser.browser.media_entity_browser
     - field.field.paragraph.character.field_paragraph_character_desc
     - field.field.paragraph.character.field_paragraph_character_image
     - field.field.paragraph.character.field_paragraph_character_name
@@ -21,6 +22,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
   field_paragraph_character_image:
     weight: 2
     settings:
@@ -33,6 +35,7 @@ content:
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
+    region: content
   field_paragraph_character_name:
     weight: 0
     settings:
@@ -40,6 +43,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

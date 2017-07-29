@@ -21,6 +21,7 @@ content:
       image_style: 750x250
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   langcode: true

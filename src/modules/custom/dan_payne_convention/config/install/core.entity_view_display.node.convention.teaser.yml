@@ -28,6 +28,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_convention_bckg_image:
     type: entity_reference_entity_view
     weight: 1
@@ -36,6 +37,7 @@ content:
       view_mode: news_teaser
       link: false
     third_party_settings: {  }
+    region: content
   field_convention_begin_date:
     type: datetime_custom
     weight: 3
@@ -44,6 +46,7 @@ content:
       timezone_override: ''
       date_format: 'd F Y'
     third_party_settings: {  }
+    region: content
   field_convention_logo:
     type: entity_reference_entity_view
     weight: 0
@@ -52,6 +55,7 @@ content:
       view_mode: convention_countdown_logo
       link: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_convention_actor_photo: true
   field_convention_end_date: true

@@ -26,6 +26,7 @@ content:
       open: false
       field_widget_display_settings: {  }
     third_party_settings: {  }
+    region: content
   field_paragraph_slider_text:
     weight: 0
     settings:
@@ -33,6 +34,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
 hidden:
   created: true
   status: true

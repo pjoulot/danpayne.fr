@@ -2,4 +2,7 @@ name: 'Dan Payne Node'
 type: module
 core: 8.x
 dependencies:
+  - block
+  - dan_payne_film
   - node
+  - views

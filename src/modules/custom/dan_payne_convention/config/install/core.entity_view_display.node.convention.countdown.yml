@@ -28,6 +28,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_convention_bckg_image:
     weight: 2
     label: hidden
@@ -36,6 +37,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_convention_begin_date:
     weight: 3
     label: hidden
@@ -44,6 +46,7 @@ content:
       date_format: d/m/Y
     third_party_settings: {  }
     type: datetime_custom
+    region: content
   field_convention_logo:
     weight: 0
     label: hidden
@@ -52,6 +55,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
 hidden:
   body: true
   field_convention_end_date: true

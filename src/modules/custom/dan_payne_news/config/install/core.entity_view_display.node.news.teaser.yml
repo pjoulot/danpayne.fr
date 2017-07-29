@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_news_comments
     - field.field.node.news.field_news_media
+    - field.field.node.news.field_news_metatag
     - field.field.node.news.field_news_tags
     - node.type.news
   module:
@@ -23,6 +24,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   field_news_media:
     type: entity_reference_entity_view
     weight: 0
@@ -31,8 +33,10 @@ content:
       view_mode: news_teaser
       link: false
     third_party_settings: {  }
+    region: content
 hidden:
   field_news_comments: true
+  field_news_metatag: true
   field_news_tags: true
   langcode: true
   links: true

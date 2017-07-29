@@ -22,6 +22,7 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
+    region: content
 hidden:
   field_user_description: true
   langcode: true

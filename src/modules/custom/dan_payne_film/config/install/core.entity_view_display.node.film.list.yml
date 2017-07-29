@@ -8,7 +8,9 @@ dependencies:
     - field.field.node.film.field_film_date
     - field.field.node.film.field_film_date_end
     - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_metatag
     - field.field.node.film.field_film_name
+    - field.field.node.film.field_film_type
     - node.type.film
   module:
     - datetime
@@ -26,6 +28,7 @@ content:
       format_type: html_year
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_film_date_end:
     type: datetime_default
     weight: 4
@@ -34,6 +37,7 @@ content:
       timezone_override: ''
       format_type: html_year
     third_party_settings: {  }
+    region: content
   field_film_image:
     type: entity_reference_entity_view
     weight: 1
@@ -42,6 +46,7 @@ content:
       view_mode: last_films
       link: false
     third_party_settings: {  }
+    region: content
   field_film_name:
     weight: 2
     label: hidden
@@ -49,11 +54,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   body: true
   field_film_character_list: true
+  field_film_metatag: true
+  field_film_type: true
   langcode: true
