@@ -23,3 +23,4 @@ $settings['install_profile'] = standard;
 
 $settings['hash_salt'] = 'bfV7NL54GnZQNjtlljoBm3WcfrOGh3AriN_visDsHZWSGh8-VGnXnOzVK-ZHSpKL9uzOQpiXZw';
 
+$config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/sync';

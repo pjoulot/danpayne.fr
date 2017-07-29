@@ -99,7 +99,12 @@ if [ -d "$PROJECT_PATH/data/files" ]
 then
     ln -s $PROJECT_PATH/data/files $WWW_PATH/sites/default/files
 fi
-
+if [ -d "$PROJECT_PATH/data/sync" ]
+then
+  ln -s $PROJECT_PATH/data/sync $WWW_PATH/sites/default/sync
+  chmod 775 -R $PROJECT_PATH/data/sync
+  chown -R drupal:www-data $PROJECT_PATH/data/sync
+fi
 
 
 ########## Update project ##########
