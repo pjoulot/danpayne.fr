@@ -2,6 +2,7 @@ name: 'Dan Payne Media'
 type: module
 core: 8.x
 dependencies:
+  - entity_browser
   - field
   - file
   - image
@@ -9,3 +10,4 @@ dependencies:
   - media_entity
   - user
   - video_embed_field
+  - views
