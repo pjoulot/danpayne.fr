@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_theme().
+ */
+function partner_link_theme($existing, $type, $theme, $path) {
+  return array(
+    'partner_link_block' => array(
+      'variables' => array(
+        'partners' => []
+      ),
+    ),
+    // Register this theme suggestion in order to use module template.
+    'taxonomy_term__partner_link__partners' => array(
+      'render element' => 'content',
+      'base hook' => 'taxonomy_term',
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_taxonomy_term().
+ */
+function partner_link_preprocess_taxonomy_term(&$variables) {
+  $term = $variables['term'];
+  // For the icon display mode, we want to apply the link on the image.
+  if ($term->getVocabularyId() == 'partner_link__partners' && $variables['view_mode'] == 'partner_link_icon') {
+    $uri = $term->get('field_partner_link__link')->uri;
+    if (!empty($variables['content']['field_partner_link__icon'])) {
+      $img = render($variables['content']['field_partner_link__icon']);
+      $url = Url::fromUri($uri);
+      $link = Link::fromTextAndUrl($img, $url);
+      $link= $link->toRenderable();
+      $variables['content']['field_partner_link__icon'] = $link;
+    }
+  }
+}
