@@ -41,7 +41,7 @@ cd $WWW_PATH/..
 sudo rm -rf $WWW_PATH
 
 # Build Drupal project.
-composer update drupal/core --with-dependencies
+composer update
 cd -
 
 # Remove .txt files
