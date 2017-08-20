@@ -8,7 +8,7 @@ use Drupal\Core\Link;
  */
 function partner_link_theme($existing, $type, $theme, $path) {
   return array(
-    'partner_link_block' => array(
+    'partner_link_list' => array(
       'variables' => array(
         'partners' => []
       ),

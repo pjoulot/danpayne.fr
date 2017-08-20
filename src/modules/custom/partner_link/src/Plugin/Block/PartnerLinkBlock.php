@@ -42,7 +42,7 @@ class PartnerLinkBlock extends BlockBase implements BlockPluginInterface {
     }
 
     $rendering = [
-      '#theme' => 'partner_link_block',
+      '#theme' => 'partner_link_list',
       '#partners' => $partners,
     ];
 
