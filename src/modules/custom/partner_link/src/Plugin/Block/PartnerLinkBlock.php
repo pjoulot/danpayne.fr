@@ -41,10 +41,16 @@ class PartnerLinkBlock extends BlockBase implements BlockPluginInterface {
       $partners[] = $view_builder->view($term, $partner_block_display);
     }
 
-    return [
+    $rendering = [
       '#theme' => 'partner_link_block',
       '#partners' => $partners,
     ];
+
+    if (!isset($config['partner_link_block_settings_css']) || (isset($config['partner_link_block_settings_css']) && $config['partner_link_block_settings_css'])) {
+      $rendering['#attached']['library'][] = 'partner_link/partner_link_default';
+    }
+
+    return $rendering;
   }
 
   /**
@@ -66,7 +72,13 @@ class PartnerLinkBlock extends BlockBase implements BlockPluginInterface {
       ],
       '#default_value' => isset($config['partner_link_block_settings_display']) ? $config['partner_link_block_settings_display'] : 'partner_link'
     ];
-  
+
+    $form['partner_link_block_settings_css'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Add default style'),
+      '#default_value' => isset($config['partner_link_block_settings_css']) ? $config['partner_link_block_settings_css'] : 1
+    ];
+
     return $form;
   }
 
@@ -76,5 +88,7 @@ class PartnerLinkBlock extends BlockBase implements BlockPluginInterface {
   public function blockSubmit($form, FormStateInterface $form_state) {
     $display = $form_state->getValue('partner_link_block_settings_display');
     $this->setConfigurationValue('partner_link_block_settings_display', $display);
+    $css = $form_state->getValue('partner_link_block_settings_css');
+    $this->setConfigurationValue('partner_link_block_settings_css', $css);
   }
 }
