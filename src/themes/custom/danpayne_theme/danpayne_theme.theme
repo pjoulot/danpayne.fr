@@ -7,12 +7,12 @@ function danpayne_theme_preprocess_region(&$variables) {
   global $base_url;
   
   if ($variables['region'] == 'footer') {
-    $variables['site_name'] = \Drupal::config('system.site')->getOriginal('name', FALSE);
+    $variables['site_name'] = \Drupal::configFactory()->getEditable('system.site')->get('name');
     $variables['current_year'] = date("Y");
   }
   elseif($variables['region'] == 'header') {
-    $variables['site_name'] = \Drupal::config('system.site')->getOriginal('name', FALSE);
-    $variables['slogan'] = \Drupal::config('system.site')->getOriginal('slogan', FALSE);
+    $variables['site_name'] = \Drupal::configFactory()->getEditable('system.site')->get('name');
+    $variables['slogan'] = \Drupal::configFactory()->getEditable('system.site')->get('slogan');
     $variables['front_page_url'] = $base_url;
   }
 }
