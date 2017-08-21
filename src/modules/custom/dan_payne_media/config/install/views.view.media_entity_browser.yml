@@ -2,6 +2,7 @@ langcode: und
 status: true
 dependencies:
   config:
+    - field.storage.media.field_image_media_bundle_image
     - image.style.media_entity_browser_thumbnail
   module:
     - entity_browser
@@ -83,10 +84,10 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
-        thumbnail__target_id:
-          id: thumbnail__target_id
-          table: media_field_revision
-          field: thumbnail__target_id
+        field_image_media_bundle_image:
+          id: field_image_media_bundle_image
+          table: media__field_image_media_bundle_image
+          field: field_image_media_bundle_image
           relationship: none
           group_type: group
           admin_label: ''
@@ -146,8 +147,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: media
-          entity_field: thumbnail
           plugin_id: field
         bundle:
           id: bundle
@@ -567,7 +566,8 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.media.field_image_media_bundle_image'
   entity_browser_1:
     display_plugin: entity_browser
     id: entity_browser_1
@@ -583,4 +583,5 @@ display:
         - url
         - url.query_args
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.media.field_image_media_bundle_image'
