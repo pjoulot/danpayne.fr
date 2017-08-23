@@ -97,13 +97,9 @@ echo "*** Upload the package ***"
 scp -P $DELIVERY_PORT releases/$archive_name $DELIVERY_USER@$DELIVERY_SERVER:/home/$DELIVERY_USER/
 echo "*** Installing new source code ***"
 commands="tar -zxf /home/$DELIVERY_USER/$archive_name -C /home/$DELIVERY_USER/;rm -f /home/$DELIVERY_USER/$archive_name;"
-commands="$commands rsync -r --delete --exclude=web/sites /home/$DELIVERY_USER/$TAG/$SITENAME $DELIVERY_DIR;"
+commands="$commands rsync -r --ignore-times --delete --exclude=web/sites /home/$DELIVERY_USER/$TAG/$SITENAME $DELIVERY_DIR;"
 commands="$commands chmod -R 774 $DELIVERY_DIR/; chown -R $DELIVERY_USER:www-data $DELIVERY_DIR/;"
 commands="$commands rm -Rf /home/$DELIVERY_USER/$TAG"
-ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
-echo "*** Composer update ***"
-commands="cd $DELIVERY_DIR/;"
-commands="$commands composer update;"
 ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
 echo "*** Drush commands ***"
 commands="cd $DELIVERY_DIR/web;"
