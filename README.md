@@ -3,7 +3,7 @@ The repositorie of the website danpayne.fr powered by Drupal
 
 The goal of this website is to provide informations about the actor Dan Payne in french.
 
-MEP planned for christmas 2016
+MEP planned for 2017
 
 CMS: Drupal 8
 
