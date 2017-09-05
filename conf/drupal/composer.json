@@ -144,6 +144,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/entity_browser": {
+                "Entity browser views that do have use_ajax explicitly enabled are broken with 8.3.7": "https://www.drupal.org/files/issues/d8_entity_browser-2902831.patch"
+            }
         }
     }
 }
