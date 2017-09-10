@@ -52,12 +52,12 @@ set -e
 set -o pipefail
 
 # Check changes in the repo.
-if git diff-index --quiet HEAD --; then
-  echo "The repo has no changes in local, continue..."
-else
-  echo "There are some changes in the local repo, aborting delivery."
-  exit 0
-fi
+#if git diff-index --quiet HEAD --; then
+#  echo "The repo has no changes in local, continue..."
+#else
+#  echo "There are some changes in the local repo, aborting delivery."
+#  exit 0
+#fi
 
 branch_name=$ENV
 if [ "$ENV" == "prod" ]; then
@@ -73,8 +73,8 @@ fi
 echo "Changing to the environment branch"
 git checkout $branch_name
 
-echo "Purging local modifications..."
-git reset --hard HEAD
+#echo "Purging local modifications..."
+#git reset --hard HEAD
 
 # Create a tag for each delivery.
 #git tag "$TAG"
@@ -89,7 +89,7 @@ fi
 
 echo "*** Create the package ***"
 mkdir releases/$TAG
-rsync -r --copy-links --delete --exclude=web/sites /var/www/$SITENAME releases/$TAG/
+sudo rsync -r --copy-links --delete --ignore-times --exclude=/web/sites /var/www/$SITENAME releases/$TAG/
 # Create the release archive.
 cd releases/ && tar -zcf $archive_name $TAG && cd ..
 rm -Rf releases/$TAG
@@ -97,7 +97,7 @@ echo "*** Upload the package ***"
 scp -P $DELIVERY_PORT releases/$archive_name $DELIVERY_USER@$DELIVERY_SERVER:/home/$DELIVERY_USER/
 echo "*** Installing new source code ***"
 commands="tar -zxf /home/$DELIVERY_USER/$archive_name -C /home/$DELIVERY_USER/;rm -f /home/$DELIVERY_USER/$archive_name;"
-commands="$commands rsync -r --ignore-times --delete --exclude=web/sites /home/$DELIVERY_USER/$TAG/$SITENAME $DELIVERY_DIR;"
+commands="$commands rsync -r --ignore-times --delete --ignore-times --exclude=sites /home/$DELIVERY_USER/$TAG/$SITENAME/web/ $DELIVERY_DIR/web/;"
 commands="$commands chmod -R 774 $DELIVERY_DIR/; chown -R $DELIVERY_USER:www-data $DELIVERY_DIR/;"
 commands="$commands rm -Rf /home/$DELIVERY_USER/$TAG"
 ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
