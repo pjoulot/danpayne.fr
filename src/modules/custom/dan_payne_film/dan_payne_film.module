@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Module file related to films.
+ */
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function dan_payne_film_preprocess_views_view(&$variables) {
+  // Add on every views, a menu to navigate between page display modes.
+  $displays = $variables['view']->storage->get('display');
+  $displayInfos = [];
+  foreach ($displays as $display) {
+    $id = $display['id'];
+    if ($id !== 'default' && $display['display_plugin'] === 'page') {
+      $view = clone $variables['view'];
+      $view->setDisplay($id);
+      $displayObj = $view->getDisplay($id);
+      $displayInfos[$id]['title'] = $displayObj->getOption('title');
+      $params = \Drupal::request()->query->all();
+      unset($params['ajax_page_state']);
+      unset($params['_wrapper_format']);
+      $viewUrl = $variables['view']->getUrl(NULL, $id);
+      $viewUrl->setOption('query', $params);
+      $displayInfos[$id]['url'] = $viewUrl->toString();
+    }
+  }
+  if (count($displayInfos) > 1) {
+    $variables['attachment_before'][] = [
+      '#theme' => 'career_views_display_mode_switcher',
+      '#display_infos' => $displayInfos
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function dan_payne_film_theme($existing, $type, $theme, $path) {
+  return array(
+    'career_views_display_mode_switcher' => array(
+      'variables' => array(
+        'display_infos' => [],
+      ),
+    ),
+  );
+}
