@@ -1,5 +1,11 @@
-<div>
+<div class="views-switcher">
+  {% spaceless %}
   {% for display in display_infos %}
-    <a href="{{ display['url'] }}">{{ display['title'] }}</a>
+    {% set activelink= '' %}
+    {% if display['active'] %}
+      {% set activelink= 'active' %}
+    {% endif %}
+    <a href="{{ display['url'] }}" class="{{ activelink }}">{{ display['title'] }}</a>
   {% endfor %}
+  {% endspaceless %}
 </div>

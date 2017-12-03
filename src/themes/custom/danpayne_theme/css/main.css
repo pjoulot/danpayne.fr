@@ -810,6 +810,35 @@ textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type=
   float: right;
 }
 
+.views-switcher {
+  text-align: center;
+}
+
+.views-switcher a {
+  display: inline-block;
+  padding: 15px 15px 10px 15px;
+  background-color: #FFFFFF;
+  text-decoration: none;
+  color: #292F33;
+  border: solid 1px #E1E8ED;
+  border-bottom: solid 5px #292F33;
+  border-radius: 10px;
+}
+
+.views-switcher a+a {
+  margin-left: 10px;
+}
+
+.views-switcher a:hover {
+  color: #339DC3;
+  border-bottom: solid 5px #339DC3;
+}
+
+.views-switcher a.active {
+  border-bottom: solid 5px #339DC3;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1264px) {
   .template-right-column--column {
     display: none;

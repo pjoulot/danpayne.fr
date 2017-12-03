@@ -25,6 +25,7 @@ function dan_payne_film_preprocess_views_view(&$variables) {
       $viewUrl = $variables['view']->getUrl(NULL, $id);
       $viewUrl->setOption('query', $params);
       $displayInfos[$id]['url'] = $viewUrl->toString();
+      $displayInfos[$id]['active'] = $id === $variables['view']->current_display;
     }
   }
   if (count($displayInfos) > 1) {
