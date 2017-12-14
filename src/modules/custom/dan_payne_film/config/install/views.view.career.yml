@@ -2,6 +2,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.basic_list
     - core.entity_view_mode.node.teaser
     - node.type.film
   module:
@@ -58,6 +59,7 @@ display:
       row:
         type: 'entity:node'
         options:
+          relationship: none
           view_mode: teaser
       fields:
         title:
@@ -154,6 +156,35 @@ display:
     display_options:
       display_extenders: {  }
       path: carriere
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Page 2'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      path: carriere-detail
+      style:
+        type: default
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        title: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: basic_list
+      title: 'Carrière détaillée'
     cache_metadata:
       max-age: -1
       contexts:
