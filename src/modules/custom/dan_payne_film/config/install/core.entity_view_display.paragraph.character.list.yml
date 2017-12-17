@@ -1,0 +1,27 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.list
+    - field.field.paragraph.character.field_paragraph_character_desc
+    - field.field.paragraph.character.field_paragraph_character_image
+    - field.field.paragraph.character.field_paragraph_character_name
+    - paragraphs.paragraphs_type.character
+id: paragraph.character.list
+targetEntityType: paragraph
+bundle: character
+mode: list
+content:
+  field_paragraph_character_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_paragraph_character_desc: true
+  field_paragraph_character_image: true
+  uid: true

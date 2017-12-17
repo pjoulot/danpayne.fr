@@ -2,6 +2,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.basic_list
     - field.field.node.film.body
     - field.field.node.film.field_film_character_list
     - field.field.node.film.field_film_date
@@ -15,31 +16,24 @@ dependencies:
     - datetime
     - entity_reference_revisions
     - metatag
-    - text
+    - options
     - user
-id: node.film.default
+id: node.film.basic_list
 targetEntityType: node
 bundle: film
-mode: default
+mode: basic_list
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 5
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_film_character_list:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 4
     label: hidden
     settings:
-      view_mode: default
+      view_mode: list
       link: ''
     third_party_settings: {  }
     region: content
   field_film_date:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       timezone_override: ''
@@ -48,7 +42,7 @@ content:
     type: datetime_default
     region: content
   field_film_date_end:
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       timezone_override: ''
@@ -56,35 +50,34 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_film_image:
-    type: entity_reference_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: film_logo
-      link: false
-    third_party_settings: {  }
-    region: content
   field_film_metatag:
-    weight: 7
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: metatag_empty_formatter
     region: content
   field_film_name:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_film_type:
+    type: list_default
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_film_type: true
+  body: true
+  field_film_image: true
   langcode: true

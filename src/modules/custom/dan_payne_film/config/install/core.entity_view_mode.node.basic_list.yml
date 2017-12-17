@@ -1,0 +1,9 @@
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.basic_list
+label: 'Basic List'
+targetEntityType: node
+cache: true

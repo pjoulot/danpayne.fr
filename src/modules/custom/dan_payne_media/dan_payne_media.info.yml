@@ -9,6 +9,7 @@ dependencies:
   - language
   - media_entity
   - media_entity_image
+  - path
   - user
   - video_embed_field
   - views
