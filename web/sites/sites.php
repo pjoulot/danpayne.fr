@@ -53,3 +53,5 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
+$sites['www.danpayne.fr'] = 'danpayne';
+$sites['danpayne.fr'] = 'danpayne';
