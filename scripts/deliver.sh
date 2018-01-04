@@ -1,112 +1,68 @@
-#!/bin/sh
+#!/bin/bash
 
-########## Init variables ##########
+repourl=https://github.com/pjoulot/danpayne.fr.git
 
-# Default variables initialization.
-ENV=;
-TAG=;
+git clone $repourl /tmp/source
+cd /tmp/source
+git checkout master
 
-# CHECK OPTIONS
-for VAR in "$@"
-do
-    case $VAR in
-        info|help )
-            echo "Usage: ./`basename $0` [options]";
-            echo "";
-            echo "  * option env :"
-            echo "    env=[ENV]               Target environment"
-            echo "";
-            echo "  * option tag :"
-            echo "    tag=[YYYYMMDD_HHMM]     Git tag"
-            echo "";
-            exit 0;;
-        --env* )
-            ENV=$(echo $VAR | cut -d "=" -f 2);;
-        --tag* )
-            TAG=$(echo $VAR | cut -d "=" -f 2);;
-        * )
-            echo "Unknown argument '$VAR'.";;
-    esac
+
+releasename=release-danpayne
+
+#PIC ssh key must be on server
+mkdir -p /tmp/releases/${releasename}/drupal
+cp -R /tmp/source/* /tmp/releases/${releasename}/drupal/
+cd /tmp/releases/${releasename}/drupal
+composer update
+
+rm -f /tmp/releases/${releasename}/drupal/web/*.txt
+#rm -rf /tmp/releases/release-$env-$BUILD_ID/drupal/sites/routing
+
+cd /tmp/releases/
+
+rm -rf /tmp/releases/${releasename}/drupal/composer.lock
+rm -rf /tmp/releases/${releasename}/drupal/LICENSE
+rm -rf /tmp/releases/${releasename}/drupal/phpunit.xml.dist
+rm -rf /tmp/releases/${releasename}/drupal/README.md
+
+rm -rf /tmp/releases/${releasename}/drupal/web/sites/default
+
+tar -zcf ${releasename}.tgz ${releasename}
+
+rm -rf ${releasename}
+rm -rf /tmp/source/
+echo "The archive is ready to be transfered."
+
+DELIVERY_USER="philippe"
+DELIVERY_SERVER="193.70.0.251"
+DELIVERY_PORT=22
+DELIVERY_FOLDER="danpayne"
+
+if [ $DELIVERY_USER = "root" ]
+then
+  DELIVERY_PATH_PACKAGE="/root"
+else
+  DELIVERY_PATH_PACKAGE="/home/$DELIVERY_USER"
+fi
+
+while ! scp -P $DELIVERY_PORT /tmp/releases/${releasename}.tgz $DELIVERY_USER@$DELIVERY_SERVER:${DELIVERY_PATH_PACKAGE}/releases/; do
+  sleep 15
 done
-
-# Initialize tag if it is not passed
-now=`date +'%m-%d-%Y--%H-%M'`
-if [ -z "$TAG" ]
-then
-    TAG="$ENV-$now"
-fi
-
-# Check variables.
-if [ -z "$ENV" ]
-then
-    echo "missing argument 'env'."
-    exit 0
-fi
-
-# Load project environment variables.
-. `dirname $0`/env.sh
-
-# Stop executing the script if any command fails.
-# See http://stackoverflow.com/a/4346420/442022 for details.
-set -e
-set -o pipefail
-
-# Check changes in the repo.
-#if git diff-index --quiet HEAD --; then
-#  echo "The repo has no changes in local, continue..."
-#else
-#  echo "There are some changes in the local repo, aborting delivery."
-#  exit 0
-#fi
-
-branch_name=$ENV
-if [ "$ENV" == "prod" ]; then
-  branch_name="master"
-fi
-
-# Check that the environment branch exists.
-if [ ! `git branch --list $branch_name ` ]
-then
-   echo "The branch $branch_name does not exist."
-fi
-
-echo "Changing to the environment branch"
-git checkout $branch_name
-
-#echo "Purging local modifications..."
-#git reset --hard HEAD
-
-# Create a tag for each delivery.
-#git tag "$TAG"
-#git push --tags
-
-archive_name=$SITENAME-$now.tgz
-
-# Create releases folder if it does not exists.
-if [ ! -d "releases" ]; then
-  mkdir releases
-fi
-
-echo "*** Create the package ***"
-mkdir releases/$TAG
-sudo rsync -r --copy-links --delete --ignore-times --exclude=/web/sites /var/www/$SITENAME releases/$TAG/
-# Create the release archive.
-cd releases/ && tar -zcf $archive_name $TAG && cd ..
-rm -Rf releases/$TAG
-echo "*** Upload the package ***"
-scp -P $DELIVERY_PORT releases/$archive_name $DELIVERY_USER@$DELIVERY_SERVER:/home/$DELIVERY_USER/
-echo "*** Installing new source code ***"
-commands="tar -zxf /home/$DELIVERY_USER/$archive_name -C /home/$DELIVERY_USER/;rm -f /home/$DELIVERY_USER/$archive_name;"
-commands="$commands rsync -r --ignore-times --delete --ignore-times --exclude=sites /home/$DELIVERY_USER/$TAG/$SITENAME/web/ $DELIVERY_DIR/web/;"
-commands="$commands chmod -R 774 $DELIVERY_DIR/; chown -R $DELIVERY_USER:www-data $DELIVERY_DIR/;"
-commands="$commands rm -Rf /home/$DELIVERY_USER/$TAG"
-ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
-echo "*** Drush commands ***"
-commands="cd $DELIVERY_DIR/web;"
-commands="$commands drush updb; drush cr"
+commands="cd $DELIVERY_PATH_PACKAGE/releases;"
+commands="$commands tar -zxf $releasename.tgz;"
+commands="$commands rm -rf /var/www/$DELIVERY_FOLDER/*;"
+commands="$commands cp -R $releasename/drupal/* /var/www/$DELIVERY_FOLDER/;"
+commands="$commands ln -s /var/www/shared/$DELIVERY_FOLDER /var/www/$DELIVERY_FOLDER/web/sites;"
+commands="$commands chown -R $DELIVERY_USER:www-data /var/www/$DELIVERY_FOLDER;"
+commands="$commands rm -f $releasename.tgz;"
+commands="$commands rm -rf $releasename;"
+commands="$commands cd /var/www/$DELIVERY_FOLDER/web;"
+commands="$commands drush cr drush;"
+commands="$commands drush updb -y;"
+commands="$commands drush cr drush;"
 commands="$commands drush entity-updates -y"
 commands="$commands drush fra -y; drush cr"
 commands="$commands drush locale-check; drush locale-update; drush cr"
 ssh $DELIVERY_USER@$DELIVERY_SERVER $commands
-echo "*** Install completed successfully ***"
 
+echo "Delivered with success."
