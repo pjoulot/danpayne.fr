@@ -1,0 +1,22 @@
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_film_important
+    - node.type.film
+id: node.film.field_film_important
+field_name: field_film_important
+entity_type: node
+bundle: film
+label: 'Important for his career'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

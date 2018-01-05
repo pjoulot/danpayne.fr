@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.film.field_film_date
     - field.field.node.film.field_film_date_end
     - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_important
     - field.field.node.film.field_film_metatag
     - field.field.node.film.field_film_name
     - field.field.node.film.field_film_type
@@ -65,6 +66,16 @@ content:
       link: false
     third_party_settings: {  }
     region: content
+  field_film_important:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_film_metatag:
     weight: 7
     label: hidden
@@ -82,9 +93,9 @@ content:
     region: content
   links:
     weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_film_type: true
   langcode: true

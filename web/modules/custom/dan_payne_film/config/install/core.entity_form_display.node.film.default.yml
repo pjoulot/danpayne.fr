@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.film.field_film_date
     - field.field.node.film.field_film_date_end
     - field.field.node.film.field_film_image
+    - field.field.node.film.field_film_important
     - field.field.node.film.field_film_metatag
     - field.field.node.film.field_film_name
     - field.field.node.film.field_film_type
@@ -26,7 +27,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 8
+    weight: 9
     settings:
       rows: 9
       summary_rows: 3
@@ -41,29 +42,30 @@ content:
     region: content
   field_film_character_list:
     type: entity_reference_paragraphs
-    weight: 13
+    weight: 14
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
       add_mode: dropdown
       form_display_mode: default
+      default_paragraph_type: ''
     third_party_settings: {  }
     region: content
   field_film_date:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_film_date_end:
     weight: 11
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
-  field_film_image:
+  field_film_date_end:
     weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_film_image:
+    weight: 13
     settings:
       entity_browser: media_entity_browser
       field_widget_display: rendered_entity
@@ -75,14 +77,21 @@ content:
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
+  field_film_important:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_film_metatag:
-    weight: 26
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
     region: content
   field_film_name:
-    weight: 9
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -119,7 +128,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 121
+    weight: 16
     third_party_settings: {  }
     region: content
   sticky:
