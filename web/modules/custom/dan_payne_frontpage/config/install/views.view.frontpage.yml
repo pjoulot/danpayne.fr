@@ -230,7 +230,7 @@ display:
           row_class: ''
           default_row_class: true
           uses_fields: false
-      title: 'Dan Payne FR : votre source francophone sur Dan Payne'
+      title: 'Dan Payne FR : votre source sur l''acteur Dan Payne'
       header: {  }
       footer: {  }
       relationships: {  }
@@ -278,6 +278,10 @@ display:
           view_mode: rss
       display_extenders: {  }
       enabled: true
+      title: 'Dan Payne FR'
+      defaults:
+        title: false
+        sitename_title: false
     cache_metadata:
       contexts:
         - 'languages:language_interface'
@@ -289,6 +293,9 @@ display:
     display_options:
       path: node
       display_extenders: {  }
+      title: 'Dan Payne FR : votre source sur l''acteur Dan Payne'
+      defaults:
+        title: false
     display_plugin: page
     display_title: Page
     id: page_1
