@@ -100,7 +100,7 @@
 
       <div{{ content_attributes }}>
         {{ content|without('field_convention_logo', 'field_convention_begin_date', 'field_convention_bckg_image', 'body') }}
-        <p>{{ content.body }}</p>
+        {{ content.body }}
       </div>
     </div>
 

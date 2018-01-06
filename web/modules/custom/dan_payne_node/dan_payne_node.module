@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Module file for nodes.
+ */
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function dan_payne_node_preprocess_node(&$variables) {
+  // Unset the role attributes in order to be HTML valid.
+  if (!empty($variables['attributes']) && !empty($variables['attributes']['role'])) {
+    unset($variables['attributes']['role']);
+  }
+}

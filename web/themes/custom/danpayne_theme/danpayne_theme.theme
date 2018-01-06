@@ -11,7 +11,7 @@ function danpayne_theme_preprocess_region(&$variables) {
     $variables['current_year'] = date("Y");
   }
   elseif($variables['region'] == 'header') {
-    $variables['site_name'] = \Drupal::configFactory()->getEditable('system.site')->get('name');
+    $variables['site_name'] = \Drupal::config('system.site')->get('name');
     $variables['slogan'] = \Drupal::configFactory()->getEditable('system.site')->get('slogan');
     $variables['front_page_url'] = $base_url;
   }
