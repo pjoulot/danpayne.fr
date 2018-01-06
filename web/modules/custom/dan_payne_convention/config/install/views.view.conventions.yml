@@ -209,7 +209,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: conventions
+      path: convention
     cache_metadata:
       max-age: -1
       contexts:
