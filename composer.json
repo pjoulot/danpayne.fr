@@ -67,7 +67,7 @@
         "composer/installers": "1.3.0",
         "drupal-composer/drupal-scaffold": "2.3.0",
         "cweagans/composer-patches": "1.6",
-        "drupal/core": "8.5.0",
+        "drupal/core": "8.5.1",
         "drush/drush": "~8.3",
         "drupal/console": "~1.0",
         "drupal/config_update": "1.5",
