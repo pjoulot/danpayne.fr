@@ -21,7 +21,7 @@
                 "version": "4.6",
                 "type": "drupal-library",
                 "dist": {
-                    "url": "http://download.ckeditor.com/colorbutton/releases/colorbutton_4.6.0.zip",
+                    "url": "https://download.ckeditor.com/colorbutton/releases/colorbutton_4.6.0.zip",
                     "type": "zip"
                 }
             }
@@ -33,7 +33,7 @@
                 "version": "4.6",
                 "type": "drupal-library",
                 "dist": {
-                    "url": "http://download.ckeditor.com/font/releases/font_4.6.0.zip",
+                    "url": "https://download.ckeditor.com/font/releases/font_4.6.0.zip",
                     "type": "zip"
                 }
             }
@@ -45,7 +45,7 @@
                 "version": "4.6",
                 "type": "drupal-library",
                 "dist": {
-                    "url": "http://download.ckeditor.com/panelbutton/releases/panelbutton_4.6.0.zip",
+                    "url": "https://download.ckeditor.com/panelbutton/releases/panelbutton_4.6.0.zip",
                     "type": "zip"
                 }
             }
@@ -135,9 +135,6 @@
         "post-update-cmd": [
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
-    },
-    "config": {
-        "secure-http": false
     },
     "extra": {
         "installer-paths": {
