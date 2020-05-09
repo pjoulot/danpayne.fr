@@ -64,9 +64,9 @@
         }
     ],
     "require": {
-        "composer/installers": "1.3.0",
-        "drupal-composer/drupal-scaffold": "2.3.0",
-        "cweagans/composer-patches": "1.6",
+        "composer/installers": "^1.3.0",
+        "drupal-composer/drupal-scaffold": "^2.3.0",
+        "cweagans/composer-patches": "^1.6",
         "drupal/core": "^8.6.2",
         "drush/drush": "~8.3",
         "drupal/console": "~1.0",
@@ -146,9 +146,6 @@
             "drush/contrib/{$name}": ["type:drupal-drush"]
         },
         "patches": {
-          "drupal/field_group": {
-            "missing UI for description text for field groups": "https://www.drupal.org/files/issues/field_group-support_description_ui-2824350-10.patch"
-          }
         }
     }
 }
