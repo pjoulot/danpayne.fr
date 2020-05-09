@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdcef87e97db1773509b81030ce49893",
+    "content-hash": "130262802746209ff6112b11c25da4a6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3424,7 +3424,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Updating Paragraph on Drupal ^8.8.2 gives error on update #8017": "https://www.drupal.org/files/issues/2020-05-07/3114512-23.patch"
+                    "Updating Paragraph on Drupal ^8.8.2 gives error on update #8017": "https://www.drupal.org/files/issues/2020-02-20/3114512-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

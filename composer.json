@@ -147,7 +147,7 @@
         },
         "patches": {
             "drupal/paragraphs": {
-	        "Updating Paragraph on Drupal ^8.8.2 gives error on update #8017": "https://www.drupal.org/files/issues/2020-05-07/3114512-23.patch"
+	        "Updating Paragraph on Drupal ^8.8.2 gives error on update #8017": "https://www.drupal.org/files/issues/2020-02-20/3114512-1.patch"
 	    }
 	}
     }
